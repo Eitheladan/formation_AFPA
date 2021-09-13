@@ -7,9 +7,24 @@
     <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel="stylesheet">
     <title>Document</title>
     <style>
+        body{
+
+            background-image: url('C:\\laragon\\www\\formation_AFPA\\CV\\bw.jpg');
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: 10%;
+
+           
+        }
+        
+        
         header{
-            width: 980px;
+            width: 1060px;
+            height: 120px;
             margin: 0 auto;
+            margin-top: 0;
+            background-color: rgb(255, 255, 255);
         }
 
         header span{
@@ -18,12 +33,13 @@
         }
         
         
-        h1{
+        #titre{
             float:left;
             font-size:60px;
             font-family: Crete Round;
             color:black;
-            margin: 0 auto;
+            margin-left: 60px;
+            
         }
         nav{
             float:right;
@@ -33,6 +49,7 @@
             display:inline-block;
             margin-left: 10px;
             font-family: Arial, Helvetica, sans-serif;
+            margin-right: 45px;
             
         }
 
@@ -47,26 +64,20 @@
             color: darkorange;
         }
         #name{
-            width: 980px;
-            background-image: src('C:\\laragon\\www\\formation_AFPA\\CV\\bw.jpg');
-            background-repeat: no-repeat;
-            background-position-x: center;
-            background-position-y: center;
+            width: 1050px;
+            height: 330px;
             margin: 0 auto;
-            
-           
-            
+            text-align: center;
             
         }
 
         #name p{
-                font-size: 60px;
-                color: chocolate;
-                position: absolute;
-                top : 33%;
-                left : 50%;
-                font-family: Arial, Helvetica, sans-serif;
-
+                 font-size: 60px;
+                 color: chocolate;
+                 font-family: Arial, Helvetica, sans-serif;
+                 margin-left: 20%;
+                 margin-top: 10% ;
+                 
             }
 
             #img_min{
@@ -74,15 +85,31 @@
         }
 
         #projet{
-            width: 1200px;
+            width: 1060px;
             margin: 0 auto;
             text-align: center;
             white-space: normal;
+            background-color: white;
         }
 
         #projet1{
+            margin-top: 5%;
             display: inline-block; 
+            height: 75%;
+            }
+
+            #projet1 img {
+
+                height: 70px;
+                width: auto;
+            }
+        #icone{
+            border: 1px;
+            border: violet;
+            height: 75%;
+            width: auto;
         }
+
         #projet2{ 
             font-family: Arial, Helvetica, sans-serif;
             font-size: 25px;
@@ -96,6 +123,58 @@
             
 
         }
+        #contacte{
+            width: 1060px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 25px;
+
+
+        }
+        #trait{
+            width: 650px;
+            border-color: rgb(96, 176, 212);
+            border-style: solid;            
+            margin: 0 auto;
+        }
+        #contact-txt{
+
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        #formulaire{
+            width: 1060px;
+            margin: 0 auto;
+            text-align: center;            
+        }
+        #formulaire li{
+            display: inline;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+            font-size: 15px;
+        }
+        #email{
+            display: inline;
+        }
+        #valide{
+            display: inline;
+        }
+        .bouton {
+  background-color: #3aa4ce;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
 
 
         </style>
@@ -103,7 +182,7 @@
 </head>
 <body>
     <header>
-        <h1>Développeur <span>Web</span></h1>
+        <section id="titre">Développeur <span>Web</span></section>
         <nav>
             <ul>
                 <li id="nav"><a href="acceuil.html">ACCEUIL</a></li>
@@ -116,7 +195,7 @@
     <section id="name">
 
         <p>ADA LOVELACE</p>
-        <img id=img_max src="C:\\laragon\\www\\formation_AFPA\\CV\\bw.jpg" />
+        
         <img id=img_min src="C:\\laragon\\www\\formation_AFPA\\CV\\bw_min.jpg" />
         
 
@@ -124,15 +203,15 @@
     </section>
     <section id="projet">
         <ul>
-            <li id="projet1"><img src="C:\laragon\www\formation_AFPA\CV\steps-icon-1.png"/>
+            <li id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-1.png"/>
                 <p id="projet2">PROJET 1</p>
                 <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p> 
             </li>
-            <li id="projet1"><img src="C:\laragon\www\formation_AFPA\CV\steps-icon-2.png"/>
+            <li id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-2.png"/>
                 <p id="projet2">PROJET 2</p>
                 <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p> 
             </li>
-            <li id="projet1"><img src="C:\laragon\www\formation_AFPA\CV\steps-icon-3.png"/>
+            <li id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-3.png"/>
                 <p id="projet2">PROJET 3</p>
                 <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p> 
             </li>
@@ -143,12 +222,35 @@
 
     </section>
     <section id="contacte">
+        <p id="contact-me">CONTACTEZ-MOI</p>
+
+        <div id=trait></div>
+
+        <div id=contact-txt>Je suis disponnible actuellement pour effectuer une alternance pour me perfectionner</div>
+
+
+    </section>
+
     
     
     
     <section id="formulaire">
 
-
+        <form action="">
+            <ul>
+            <li class="nom">
+                <label for="nom">NOM : </label>
+                <input type="text" placeholder="Votre Nom" name="nom" id="nom" required>
+            </li>
+            <li class="email">
+                <label for="email">Email : </label>
+                <input placeholder="Votre Email" type="text" name="email" id="email" required>
+            </li>
+            <li class="valide">
+                <input type="button" class=bouton value="OK">
+            </li>
+            </ul>
+        </form>
 
     </section>
 
