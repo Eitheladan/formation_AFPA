@@ -63,6 +63,10 @@
         #nav a:hover{
             color: darkorange;
         }
+        #menu{
+
+            display: none;
+        }
         #name{
             width: 1050px;
             height: 330px;
@@ -164,18 +168,92 @@
             display: inline;
         }
         .bouton {
-  background-color: #3aa4ce;
-  border: none;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  cursor: pointer;
-}
+            background-color: #3aa4ce;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+        }
+@media screen and (min-width: 640px) and (max-width: 1100px) {
 
+    body{
+        background-image: url('C:\\laragon\\www\\formation_AFPA\\CV\\bw_min.jpg');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+       background-position-y: 10%;
+        
+    }
+    header{
+            
+            margin: 0 auto;
+            margin-top: 0;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        header span{
+
+            color: chocolate;
+        }
+        
+        
+        #titre{
+            
+            font-size:30px;
+            font-family: Crete Round;
+            color:black;
+            margin-left: 30px;
+            
+        }
+        nav{
+            position: static;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #nav{
+            display:none;
+            font-family: Arial, Helvetica, sans-serif;
+           
+            
+        }
+
+        #nav a{
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            }
+
+        #nav a:hover{
+            color: darkorange;
+
+        }
+
+        #menu{
+            float:left;
+            display: initial;
+            font-size: 15px;
+            font-weight: bold;
+            
+        }
+
+        #name{
+            width: 1050px;
+            height: 330px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 35px;
+            
+        }
+        
+    }
 
         </style>
    
@@ -189,6 +267,14 @@
                 <li id="nav"><a href="formation.html">FORMATION</a></li>
                 <li id="nav"><a href="experience.html">EXPERIENCE</a></li>
             </ul>
+            <div section="menu">
+                <select name="menu" id="menu">
+                    <option value="">Menu</option>
+                    <option value="acceuil"><a href="acceuil.html">ACCEUIL</a></option>
+                    <option value="formation"><a href="formation.html">FORMATION</a></option>
+                    <option value="experience"><a href="experience.html">EXPERIENCE</a></option>                   
+                </select>
+            </div>
         </nav>
     </header>
 
