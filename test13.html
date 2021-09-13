@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <script>
+            function Bisextile (n){
+
+            if ((n%4== 0) && (n%100 !=0) || (n%400==0)){
+            
+            
+                return (true)
+
+            }else{
+
+                return (false)
+
+                
+            }
+            }
+            
+
+            //var a1 = Math.round (Math.random () * 21+2000);
+            
+           // console .log (n2)
+
+            for (var ind = 1900 ; ind < 2022 ; ind ++){
+                
+            var n2 = (Bisextile(ind));
+            
+            
+
+            
+
+            if (n2==true) {
+
+                //document .write (ind + "<br/> <div> <img src='C:\\Users\\29010-33-07\\Desktop\\test_html\\test.jpg'/>  </div> <br/> ")
+                document .write (ind + "<div style='color: red; font-size: xx-large;  text-shadow: 3px 3px 1px rgba(0,0,255,.2);'>Je suis bisextile</div>")
+
+            }else{
+
+                console .log (ind + "annee n'est pas bisextile")
+            }
+            
+        }
+        
+        
+            
+        </script>
+    </head>
+</html>

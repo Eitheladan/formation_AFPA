@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <script>
+           var tableau=[4,2,9,1,10,6,5,98,25]
+           
+
+           function tribulle (tableau){
+
+            for (var x=0; x<tableau.length+1; x ++){
+
+                for (var y=0; y<x+1; y ++){
+
+                var tmp
+
+                if (tableau[y]<tableau[y-1]){
+
+                    tmp=tableau[y-1]
+
+                    tableau[y-1]=tableau[y]
+
+                    tableau[y]=tmp
+
+                }
+            }
+
+
+            
+            }
+        }
+             tribulle(tableau)
+            
+            console.log (tableau)
+        
+
+            
+
+           
+
+
+        
+            
+        </script>
+    </head>
+</html>
