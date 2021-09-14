@@ -107,6 +107,7 @@
                 height: 70px;
                 width: auto;
             }
+
         #icone{
             border: 1px;
             border: violet;
@@ -119,14 +120,13 @@
             font-size: 25px;
             font-weight: bolder;
         }
+
         #projet3{
             font-family: Arial, Helvetica, sans-serif;
             font-size: 15px;
-            text-justify: auto;
             width: 300px;
-            
-
         }
+
         #contacte{
             width: 1060px;
             margin: 0 auto;
@@ -183,17 +183,16 @@
 
     body{
         background-image: url('C:\\laragon\\www\\formation_AFPA\\CV\\bw_min.jpg');
-        background-size: 50%;
+        background-size: 30%;
         background-repeat: no-repeat;
         background-position-x: center;
-       background-position-y: 10%;
+        background-position-y: 220px;
         
     }
     header{
             
             margin: 0 auto;
-            margin-top: 0;
-            background-color: rgb(255, 255, 255);
+            margin-top: 0;            
             text-align: center;
         }
 
@@ -209,13 +208,16 @@
             font-family: Crete Round;
             color:black;
             margin-left: 30px;
+            float: none;
             
         }
         nav{
-            position: static;
+            
             font-size: 20px;
             text-align: center;
             margin: 0 auto;
+            clear: both;
+            float: none;
         }
         #nav{
             display:none;
@@ -229,7 +231,7 @@
             text-decoration: none;
             font-size: 15px;
             font-weight: bold;
-            }
+        }
 
         #nav a:hover{
             color: darkorange;
@@ -237,28 +239,129 @@
         }
 
         #menu{
-            float:left;
+            float:none;
             display: initial;
             font-size: 15px;
             font-weight: bold;
-            
+                        
         }
 
         #name{
-            width: 1050px;
+            width: 50%;
             height: 330px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 35px;
+            margin: 0 auto;            
+            font-size: 20px;
+            
             
         }
-        
+        #name p{
+                 font-size: 40px;
+                 color: rgb(21, 202, 103);
+                 font-family: Arial, Helvetica, sans-serif;
+                 margin-bottom: 30px;
+                 margin-left: 0;
+        }
+        #projet{
+            width: 1060px;
+            margin: 0 auto;
+            text-align: center;
+            white-space: normal;
+            background-color: white;
+        }
+
+        #projet1{
+            margin-top: 10%;
+            display: block; 
+            height: 75%;
+            }
+
+            #projet1 img {
+
+                height: 70px;
+                width: auto;
+            }
+        #icone{
+           
+            
+            height: 75%;
+            width: auto;
+        }
+
+        #projet2{ 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        #projet3{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 0;
+            width: auto;
+           
+            
+            
+
+        }
+        #contacte{
+            width: 1060px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 25px;
+
+
+        }
+        #trait{
+            width: 650px;
+            border-color: rgb(96, 176, 212);
+            border-style: solid;            
+            margin: 0 auto;
+        }
+        #contact-txt{
+
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        #formulaire{
+            width: 1060px;
+            margin: 0 auto;
+            text-align: center;            
+        }
+        #formulaire li{
+            display: inline;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+            font-size: 15px;
+        }
+        #email{
+            display: inline;
+        }
+        #valide{
+            display: inline;
+        }
+        .bouton {
+            background-color: #3aa4ce;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+        }
     }
+
 
         </style>
    
 </head>
 <body>
+    <div class=></div>
     <header>
         <section id="titre">Développeur <span>Web</span></section>
         <nav>
@@ -310,7 +413,7 @@
     <section id="contacte">
         <p id="contact-me">CONTACTEZ-MOI</p>
 
-        <div id=trait></div>
+        <hr id=trait>
 
         <div id=contact-txt>Je suis disponnible actuellement pour effectuer une alternance pour me perfectionner</div>
 
