@@ -18,7 +18,7 @@
         }
        
        .page{
-            width: 52%;
+            width: 52vw;
             margin: 0 auto;
         }
 
@@ -39,6 +39,9 @@
             justify-content: space-around;
             
 
+        }
+        #menu{
+            display: none;
         }
 
         header span{
@@ -68,10 +71,13 @@
         #nav a:hover{
             color: darkorange;
         }
+        .menu{
+            display: none;
+        }
 
         #name{
-            width: 1050px;
-            height: 500px;
+            width: 59vw;
+            height: 25vw;
             margin: 0 auto;
             text-align: center;
             display: flex;
@@ -90,40 +96,43 @@
         }
 
         #projet{
+            
+            
             margin: 0 auto;
             text-align: center;
             background-color: rgb(255, 255, 255);
             display: flex;
             flex: row;
             justify-content: space-around;
+            flex-wrap: wrap;
+            
             }
 
         #projet1{
-            margin-top: 3%;
-            /* height: 75%; */
-            width: 25%;
+            /* margin-top: 3%; */
+            height: 200px;
+            width: 200px;
+            
             
             }
 
             #projet1 img {
 
-                height: 70px;
+                height: 50px;
                 width: auto;
             }
-        #icone{            
-            height: 75%;
-            width: auto;
-        }
+        
 
         #projet2{ 
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.3vw;
+            font-size: 25px;
             font-weight: bolder;
         }
 
         #projet3{
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8vw;
+            font-size: 15px;
+            /* font-size: 20px; */
             margin: 0;
                        
         }
@@ -141,7 +150,7 @@
         }
 
         #trait{
-            width: 650px;
+            width: 35vw;
             border-color: rgb(96, 176, 212);
             border-style: solid;            
             margin: 0 auto;
@@ -149,27 +158,35 @@
 
         #contact-txt{
 
-            font-size: 15px;
-            margin-top: 10px;
+            font-size: 0.9vw;
+            margin-top: 0.4vw;
         }
 
         #formulaire{
-            width:700px;
+            width:38vw;
             margin: 0 auto;
             text-align: center;
             display:flex;
             flex: row;
             justify-content: space-around;
             align-items: baseline;
+            flex-wrap: wrap;
             
         }
         
+        .nom{
+            font-size: 18px;
+        }
+        #nom{
+            font-size: 18px;
+        }
+        .email{
+            font-size: 18px;
+        }
         #email{
-            /* display: inline; */
+            font-size: 18px;
         }
-        #valide{
-            /* display: inline; */
-        }
+        
         .bouton {
             background-color: #3aa4ce;
             border: none;
@@ -179,9 +196,97 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 15px;
+            font-size:  15px;
             cursor: pointer;
         }
+
+
+@media screen and (min-width: 200px) and (max-width: 900px) {
+
+    .page{
+            width: 100%;
+            margin: 0 auto;
+    }
+    body{
+    background-image: url('C:\\laragon\\www\\formation_AFPA\\CV\\bw_min.jpg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 100px;
+
+}
+header{
+    
+    margin: 0 auto;
+    margin-top: 0;            
+    text-align: center;
+}
+
+header span{
+
+    color: chocolate;
+}
+
+
+#titre{
+    
+    font-size:25px;
+    font-family: Crete Round;
+    color:black;
+    margin-left: 0;
+    float: none;
+    
+}
+nav{
+    
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    clear: both;
+    float: none;
+}
+
+#nav{
+    display:none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    #nav a{
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+         #nav a:hover{
+        color: darkorange;
+        }
+
+#menu{
+    float:none;
+    display: initial;
+    font-size: 15px;
+    font-weight: bold;                        
+}
+
+#name{
+   
+    margin: 0 auto;            
+    
+    height: 350px;
+}
+
+    #name p{
+         font-size: 30px;
+         color: rgb(21, 202, 103);
+         font-family: Arial, Helvetica, sans-serif;
+         
+         margin-left: 0;
+    }
+    #contact-txt{
+        display: none;
+    }
+}
 
     </style>
 </head>
@@ -192,18 +297,18 @@
         <header>
             <section id="titre">Développeur <span>Web</span></section>
             <div class="nav">                
-                    <div id="nav"><a href="acceuil.html">ACCEUIL</a></div>
+                    <div id="nav"><a href="acceuil.html">ACCUEIL</a></div>
                     <div id="nav"><a href="formation.html">FORMATION</a></div>
                     <div id="nav"><a href="experience.html">EXPERIENCE</a></div>
                 
-                <!-- <div section="menu">
+                <div section="menu">
                     <select name="menu" id="menu">
                         <option value="">Menu</option>
                         <option value="acceuil"><a href="acceuil.html">ACCEUIL</a></option>
                         <option value="formation"><a href="formation.html">FORMATION</a></option>
                         <option value="experience"><a href="experience.html">EXPERIENCE</a></option>                   
                     </select>
-                </div> -->
+                </div>
             </div>
         </header>
     
