@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container { 
+            /* display: grid; */
+            width: 1000px;
+            height: 900px;
+            margin: 0 auto;
+            background-color: green;
+
+            background-color: green;
+
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px auto auto 80px;
+            
+            
+        }
+        .container .container-1{
+
+            display: grid;
+            margin: 0 auto;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 80%;
+            height: 95%;
+            grid-gap: 10px;
+            grid-template-rows: 1fr 6fr 1fr;
+            grid-template-areas:    "header header header"
+                                    "main main sidebar"
+                                    "footer footer footer";
+        } 
+        .item-1 {
+        
+        background-color: aqua;
+        grid-area: header;
+        height: 100%;
+        
+        }
+
+        .item-2 {
+
+        background-color: blue;
+        color: white;
+        grid-area: main;
+        height: 100%;
+        }
+
+        .item-3 {
+
+        background-color: lightcoral;
+        grid-area: sidebar;
+        height: 100%;
+        }
+
+        .item-4 {
+
+        background-color: blueviolet;
+        grid-area: footer;
+        height: 100%;
+        }
+        
+
+
+
+        @media screen and (min-width: 300px) and (max-width: 900px) {
+
+            .container{
+                width: 1000px;
+                grid-column: ;
+                /* grid-template-columns: repeat(3,1fr);
+                grid-template-rows: 1fr 1fr 1fr; */
+                grid-template-areas:"header header header"
+                                        "main main sidebar"
+                                        "footer footer footer";
+
+            }
+            .item-1 {
+               
+            background-color: rgb(76, 0, 255);
+            grid-area: header;
+            height: 100%;
+        
+        }
+
+        .item-2 {
+
+            background-color: rgb(0, 255, 13);
+            color: white;
+            grid-area: main;
+            height: 100%;
+        }
+
+        .item-3 {
+
+        background-color: rgb(231, 128, 240);
+        grid-area: sidebar;
+        height: 100%;
+        }
+
+        .item-4 {
+
+        background-color: rgb(43, 220, 226);
+        grid-area: footer;
+        height: 100%;
+        }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="container-1">
+            <div class="item-1">header</div>
+            <div class="item-2">main</div>
+            <div class="item-3">sidebar</div>
+            <div class="item-4">footer</div>
+        </div>
+    </div>
+
+   
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<style>
+body {
+padding-top: 20px;
+background: #f5f7f8;
+}
+.grid-1 {
+display: grid;
+width: 100%;
+margin: 0 auto;
+grid-template-columns: 1fr; /* je crée une colonne sur toute la largeur */
+grid-template-rows: 80px auto auto 80px; /* je cré 4 rangées dont 2 fixes */
+grid-gap: 10px; /* une gouttière de 10px */
+grid-template-areas: "header"
+"main"
+"sidebar"
+"footer"; /* consécutivement je nomme les aires et j'affiche verticalement */
+}
+/* items */
+.grid-1 div {
+color: white;
+font-size: 16px;
+padding: 10px;
+}
+/* specific item styles */
+.item-1 {
+background: #b03532;
+grid-area: header;
+border-radius: 30px;
+}
+.item-2 {
+background: #33a8a5;
+grid-area: main;
+display: grid;
+grid-template-columns: 100%;
+word-wrap: break-word;
+grid-template-rows: auto;
+grid-gap: 10px;
+grid-template-areas: "header2"
+"article2"
+"sidebar2";
+}
+/* rwd */
+@media only screen and (min-width: 600px) {
+.item-2 {
+grid-template-columns: 1fr 30%;
+grid-template-rows: auto auto;
+grid-gap: 20px;
+grid-template-areas: "header2 header2"
+"article2 sidebar2";
+}
+}
+
+/* rwd */
+@media only screen and (min-width: 500px) {
+.grid-1 {
+max-width: 800px;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 80px auto 80px;
+grid-gap: 20px;
+grid-template-areas: "header header header"
+"main main sidebar"
+"footer footer footer";
+}
+
+.grid-1 div {
+color:#bde03f;
+font-size: 20px;
+padding: 20px;
+}
+
+} /* fin mediaQ */
+
+/* fin media-queries */
+
+.item-3 {
+background: #30997a;
+grid-area: sidebar;
+}
+.item-4 {
+background: #6a478f;
+grid-area: footer;
+}
+.item-5 {
+background: #da6f2b;
+grid-area: header2;
+}
+.item-6 {
+background: #3d8bb1;
+grid-area: article2;
+}
+.item-7 {
+background: #e03f3f;
+grid-area: sidebar2;
+}
+</style>
+
+<section class="grid-1">
+
+<div class="item-1">1 header</div>
+<div class="item-2">
+<div class="item-5">5 dans main 2</div>
+<div class="item-6">6 dans main 2</div>
+<div class="item-7">7 dans main 2</div>
+</div>
+<div class="item-3">3 aside</div>
+<div class="item-4">4 footer</div>
+</section>
+<body>
+</body>
+</html>
