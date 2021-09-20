@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+
+    <div id="toto">
+        
+
+
+
+    </div>
+
+    <script>
+
+        var newP = document.createElement("p");
+        var newTxt = document.createTextNode("Contenue de P");
+            newP.append(newTxt)
+
+        var maDiv = document.getElementById("toto");
+            maDiv.appendChild(newP);
+
+        // var monA = document.createElement("a");
+        //     monA.setAttribute("href",'http://example.com')
+
+        // var unTexte = document.createTextNode("Lien vers example.com")
+        //     monA.appendChild(unTexte);
+
+        //     maDiv.appendChild(monA);
+
+    </script>
+    
+</body>
+</html>

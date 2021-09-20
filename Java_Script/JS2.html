@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let femmes = `
+        [
+{ "nom_produit": "robe classe"     ,  "prix": 25 , "photo": "robef.png"    },
+{ "nom_produit": "pantalon femme"  ,  "prix": 28 , "photo": "tshirt.png"   },
+{ "nom_produit": "t-shirt femme"   ,  "prix": 35 , "photo": "pantalon.png" }
+]`;
+
+let collection_femmes = JSON.parse (femmes)
+
+// document.write(collection_femmes)
+
+collection_femmes.forEach(element => {
+
+    document.write("<h1>" + element.nom_produit + "</h1>")
+    document.write("<p>" + element.prix + "€" + "</p>")
+    document.write(`<img src= " ${element.photo} "/>`)
+    
+});
+
+
+
+    </script>
+</head>
+<body>
+
+    
+    
+</body>
+</html>

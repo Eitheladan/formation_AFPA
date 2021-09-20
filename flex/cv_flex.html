@@ -71,8 +71,13 @@
         #nav a:hover{
             color: darkorange;
         }
-        .menu{
+        #sous_deroulant a{
             display: none;
+            
+        }
+
+        .deroulant {             
+             display: none;             
         }
 
         #name{
@@ -86,7 +91,7 @@
             
         }
 
-        #name p{
+        #name div{
                  font-size: 3.2vw;
                  color: chocolate;
                  font-family: Arial, Helvetica, sans-serif;
@@ -95,9 +100,7 @@
 
         }
 
-        #projet{
-            
-            
+        #projet{            
             margin: 0 auto;
             text-align: center;
             background-color: rgb(255, 255, 255);
@@ -105,20 +108,19 @@
             flex: row;
             justify-content: space-around;
             flex-wrap: wrap;
-            
+            width: 52vw;            
             }
 
         #projet1{
-            /* margin-top: 3%; */
+            margin-top: 15px;
             height: 200px;
             width: 200px;
-            
-            
+            /* background-color: royalblue; */
             }
 
             #projet1 img {
 
-                height: 50px;
+                height: 70px;
                 width: auto;
             }
         
@@ -127,6 +129,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 25px;
             font-weight: bolder;
+            margin-top: 5px;
         }
 
         #projet3{
@@ -134,6 +137,7 @@
             font-size: 15px;
             /* font-size: 20px; */
             margin: 0;
+            margin-top: 5px
                        
         }
         #img_min{
@@ -268,6 +272,42 @@ nav{
     font-size: 15px;
     font-weight: bold;                        
 }
+#sous_deroulant{
+            display: none;
+            color: rgba(200, 200, 200, 0.0); 
+            z-index: 1000;
+        }
+
+        .deroulant {             
+            display: block; 
+            color: darkorange;             
+        }
+
+        .deroulant a:hover #sous_deroulant{
+            display: block;
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+            background-color: blanchedalmond;
+            z-index: 1000;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        #sous_deroulant a:hover{
+            color: rgb(255, 123, 0);
+            background-color: rgb(138, 101, 46);
+            }
+
+.fmnu ul li {
+    position: relative;
+}
+
+.fmnu ul ul {
+    left:-9999em;
+}
+
+.fmnu ul li:hover ul{
+    left: auto;
+}
 
 #name{
    
@@ -276,11 +316,11 @@ nav{
     height: 350px;
 }
 
-    #name p{
+    #name div{
          font-size: 30px;
          color: rgb(21, 202, 103);
          font-family: Arial, Helvetica, sans-serif;
-         
+         z-index: -1000;
          margin-left: 0;
     }
     #contact-txt{
@@ -301,20 +341,39 @@ nav{
                     <div id="nav"><a href="formation.html">FORMATION</a></div>
                     <div id="nav"><a href="experience.html">EXPERIENCE</a></div>
                 
-                <div section="menu">
+                <!-- <div section="menu">
                     <select name="menu" id="menu">
                         <option value="">Menu</option>
                         <option value="acceuil"><a href="acceuil.html">ACCEUIL</a></option>
                         <option value="formation"><a href="formation.html">FORMATION</a></option>
                         <option value="experience"><a href="experience.html">EXPERIENCE</a></option>                   
                     </select>
-                </div>
+                </div> -->
+                <div class="deroulant"><a href="">MENU</a></div>
+                    <div id="sous_deroulant">
+                        <div><a href="acceuil.html">ACCEUIL</a></div>
+                        <div><a href="formation.html">FORMATION</a></div>
+                        <div><a href="experience.html">EXPERIENCE</a></div>                   
+                    </div>
+                    <div class="fmnu">
+                        <ul>
+                            <li class="mnu" ><a href="">MENU</a>
+                                <ul>
+                                    <li class="smnu"><a href="acceuil.html">ACCEUIL</a></li>
+                                    <li class="smnu"><a href="acceuil.html">ACCEUIL</a></li>
+                                    <li class="smnu"><a href="acceuil.html">ACCEUIL</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                
+            </div>
             </div>
         </header>
     
         <section id="name">
     
-            <p>ADA LOVELACE</p>
+            <div>ADA LOVELACE</div>
             
             <!-- <img id=img_min src="C:\\laragon\\www\\formation_AFPA\\CV\\bw_min.jpg" /> -->
             
@@ -325,22 +384,22 @@ nav{
         <section id="projet">
             
                 <div id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-1.png"/>
-                    <p id="projet2">PROJET 1</p>
-                    <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p>
+                    <div id="projet2">PROJET 1</div>
+                    <div id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</div>
                 </div>
                 <div id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-2.png"/>
-                    <p id="projet2">PROJET 2</p>
-                    <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p>
+                    <div id="projet2">PROJET 2</div>
+                    <div id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</div>
                 </div>
                 <div id="projet1"><img id="icone" src="C:\laragon\www\formation_AFPA\CV\steps-icon-3.png"/>
-                    <p id="projet2">PROJET 3</p>
-                    <p id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</p>
+                    <div id="projet2">PROJET 3</div>
+                    <div id="projet3">Lorem ipsum dolor sit amet conulla ipsa voluptatem ea porro eaque.</div>
                 </div>
             
         </section>
 
         <section id="contacte">
-            <p id="contact-me">CONTACTEZ-MOI</p>
+            <div id="contact-me">CONTACTEZ-MOI</div>
     
             <hr id=trait>
     

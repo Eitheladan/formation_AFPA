@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+    
+</head>
+<body>
+
+    <div id="toto">
+
+  
+    </div>
+
+<script>
+        let femmes = `
+        [
+{ "nom_produit": "robe classe"     ,  "prix": 25 , "photo": "robef.png"    },
+{ "nom_produit": "pantalon femme"  ,  "prix": 28 , "photo": "tshirt.png"   },
+{ "nom_produit": "t-shirt femme"   ,  "prix": 35 , "photo": "pantalon.png" }
+]`;
+
+let collection_femmes = JSON.parse (femmes)
+
+collection_femmes.forEach(element => {
+
+    var newT = document.createElement("h1");
+    var newTxt = document.createTextNode(element.nom_produit);
+        newT.append(newTxt)
+        newT.style.fontFamily="fantasy";
+        newT.style.fontSize="65px";
+        newT.style.color="silver";
+        
+
+    var maDiv = document.getElementById("toto");
+        maDiv.appendChild(newT);
+        maDiv.style.textAlign="center";
+    
+    var newP = document.createElement("p");
+        newP.style.fontSize="50px";
+        newP.style.fontFamily="Arial";
+        newP.style.color="blue"
+        
+        
+    var newTxtprix = document.createTextNode(element.prix + "€");
+        newP.append(newTxtprix);
+
+        var maDivprix = document.getElementById("toto");
+        maDivprix.appendChild(newP);
+
+    var divAlign = document.createElement("div");
+        maDiv.appendChild(divAlign);
+        divAlign.setAttribute("id","maPhoto")
+        divPhoto=document.getElementById("maPhoto");
+
+    var monImg = document.createElement("img");
+        monImg.setAttribute("src",element.photo);            
+        maDiv.appendChild(monImg);
+
+});
+  
+</script>
+    
+</body>
+</html>

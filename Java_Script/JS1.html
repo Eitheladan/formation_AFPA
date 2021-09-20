@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let journal = [
+    {
+        titre: "titre1" , 
+        events: ["work","touchef tree","pizza","running","television"],
+    },
+    {
+        titre: "titre2" , 
+        events: ["work","ice cream","cauliflower","lasagna","touched tree","bruched teeth"],
+    },
+    {
+        titre: "titre3" , 
+        events: ["weekend","cycling","break","peanuts","beer"],
+    },
+]
+
+
+
+journal.forEach((element) => {
+        document.write("<h1>" + element.titre + "</h1>"),
+          document.write("<ul>"),
+          element.events.forEach((evenement) =>
+            document.write("<li>" + evenement + "</li>")
+          );
+        document.write("</ul>");
+      });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
