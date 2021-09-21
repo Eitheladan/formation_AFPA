@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+        .hidden{ visibility: hidden;}
+        .visible{ visibility: visible;}
+        #tata{display: none;}
+
+
+
+
+
+
+
+    </style>
+
+    <script>
+
+let femmes = `
+        [
+{ "nom_produit": "robe classe"     ,  "prix": 25 , "photo": "robef.png"    },
+{ "nom_produit": "pantalon femme"  ,  "prix": 28 , "photo": "tshirt.png"   },
+{ "nom_produit": "t-shirt femme"   ,  "prix": 35 , "photo": "pantalon.png" }
+]`;
+
+let collection_femmes = JSON.parse (femmes)
+
+$(document).ready( function() {
+    collection_femmes.forEach(element => {
+        $("div#toto").append("<h1>" + element.nom_produit + "</h1>")
+        $("div#toto").append("<p>" + element.prix + " € </p>")
+        $("div#toto").append("<img src=\"" + element.photo + "\"/>")
+  
+    })
+})
+
+
+let hommes = `
+        [
+{ "nom_produit": "short classe"     ,  "prix": 25 , "photo": "short_h.jfif"    },
+{ "nom_produit": "pantalon homme"  ,  "prix": 28 , "photo": "pantalon_h.jfif"   },
+{ "nom_produit": "t-shirt homme"   ,  "prix": 35 , "photo": "tshirt_h.jfif" }
+]`;
+
+let collection_hommes = JSON.parse (hommes)
+
+$(document).ready(function() {
+
+    
+
+        $(document).ready( function() {
+            collection_hommes.forEach(element => {
+                $("div#tata").append("<h1>" + element.nom_produit + "</h1>")
+                $("div#tata").append("<p>" + element.prix + " € </p>")
+                $("div#tata").append("<img src=\"" + element.photo + "\"/>")
+
+            })
+        })
+    
+})
+
+$(document).ready(function() {
+    $("#btfemme").click(function(){
+            $("#toto").toggleClass("hidden");
+            $("#tata").toggleClass("visible");
+        });
+    })
+
+
+
+
+
+</script>
+</head>
+<body>
+
+
+    <div id="toto"></div>
+    <div id="tata"></div>
+
+    <button id="btfemme">femme</button>
+    <button id="bthomme">homme</button>
+   
+
+
+
+
+    <script>
+        
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

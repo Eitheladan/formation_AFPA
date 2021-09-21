@@ -31,7 +31,7 @@ collection_femmes.forEach(element => {
 
     var newT = document.createElement("h1");                        // Création de l'élément <h1></h1>
     var newTxt = document.createTextNode(element.nom_produit);      // Insertion de l'élément [element.nom_produit] qui fait référence à la colone nom_produit du tableau
-        newT.append(newTxt);                                        //Insertion de l'élément dans ma balise <h1>
+        newT.append(newTxt);                                        // Insertion de l'élément dans ma balise <h1>
         newT.style.fontFamily="fantasy";                            // Application du style de police "fantasy"
         newT.style.fontSize="65px";                                 // Application d'une taille à ma balise h1
         newT.style.color="silver";                                  // Application d'une couleur à ma balise h1
@@ -47,9 +47,9 @@ collection_femmes.forEach(element => {
         newP.style.color="blue"                                     // Application d'une couleur à ma balise p
         
         
-    var newTxtprix = document.createTextNode(element.prix + "€"); // Insertion de l'élément [element.prix] qui fait référence à la colone prix du tableau
-        newP.append(newTxtprix);                                  // Insertion de l'élément dans ma balise <p>
-        maDiv.appendChild(newP);                                  // insertion de ma balise p dans mon code
+    var newTxtprix = document.createTextNode(element.prix + "€");   // Insertion de l'élément [element.prix] qui fait référence à la colone prix du tableau
+        newP.append(newTxtprix);                                    // Insertion de l'élément dans ma balise <p>
+        maDiv.appendChild(newP);                                    // insertion de ma balise p dans mon code
 
    
     var monImg = document.createElement("img");                     // création de l'élément <img>
