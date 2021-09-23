@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+
+    <style>
+            section{
+                margin: 0 auto;
+                width: 1000px;
+                height : 350px;
+                border: 2px solid black;
+                box-shadow: 0px 15px 10px -5px #0777;
+            }
+            #img1{
+                background-image: url("img_mountains_wide.jpg");
+                width : 999px;
+                height : 345px;
+            }
+
+            #img2{
+                background-image: url("img_nature_wide.jpg");
+                position: absolute;
+                margin : -60000000px;
+                width : 999px;
+                height : 345px;
+            }
+
+            #img3{
+                background-image: url("img_snow_wide.jpg");
+                position: absolute;
+                margin : -60000000px;
+                width : 999px;
+                height : 345px;
+            }
+
+            .right {float: right;}
+            .left {float:left;}
+            
+
+
+    </style>
+
+    <script>
+$(document).ready(function(){
+        $(".right").click(function(){
+            var e = document.getElementById('img2');
+            var f = document.getElementById('img1');
+                e.style.margin = '0px';
+                e.style.position='static';
+                f.style.display = 'none';          
+        })
+        $(".left").click(function(){
+            $("#img2").toggleClass(".imgleft");
+        })
+
+    })
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <!-- <img src="img_mountains_wide.jpg" alt="mountains">
+    <img src="img_nature_wide.jpg" alt="mountains">
+    <img src="img_snow_wide.jpg" alt="mountains"> -->
+
+    <section>
+        
+        
+        
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>        
+        
+        
+        <button class="left">left</button>
+        <button class="right">right</button>
+
+
+    </section>
+
+
+    
+</body>
+</html>

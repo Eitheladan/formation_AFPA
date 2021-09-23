@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <srcipt src="personne.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: rgb(141, 205, 207);
+            text-align: center;
+        }
+
+        img{border: 10px solid white}
+
+        div{ 
+            background-color: wheat;
+            width : 450px;
+            height: 100px;
+            margin : 0 auto; 
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-shadow: 2px 2px #8d8a8a;
+            padding: 15px 15px 15px 15px;
+            }
+        
+        h1{
+            text-shadow: 2px 2px #8d8a8a ;
+        }
+
+        #jack{
+            ;
+            
+        
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+    
+
+
+
+
+
+
+
+    <script>
+        function Animal(lenom, lage, larace, lepoids, lataille, laboiement, photo) {
+            this.nom = lenom ;
+            this.age = lage ;
+            this.race = larace;
+            this.weight = lepoids;
+            this.size = lataille;
+            this.bark = laboiement;
+            this.photo = photo;
+
+            this.presente = function () {
+    
+                if ( this.race == "Jack-russel"){
+
+                document.write("<h1>" + this.race + "</h1> <div>Bonjour , je suis " + this.nom + " et j'ai " + this.age + " ans. Je fais " + this.weight + " kg et je mesure " + this.size + " cm au garrot. Quand je suis content je fais " + this.bark + " !!!</div> </br><img id=\"jack\" src=\"" + this.photo + "\"/><br>");
+                }
+                if ( this.race == "Fox-terrier"){
+    
+                document.write("<h1>" + this.race + "</h1> <div>Bonjour , je suis " + this.nom + " et j'ai " + this.age + " ans. Je fais " + this.weight + " kg et je mesure " + this.size + " cm au garrot. Quand je suis mechant je fais " + this.bark + " !!!</div> </br><img id=\"fox\" src=\"" + this.photo + "\"/><br>");
+                }
+
+                if ( this.race == "Bouledog"){
+    
+                document.write("<h1>" + this.race + "</h1> <div>Bonjour , je suis " + this.nom + " et j'ai " + this.age + " ans. Je fais " + this.weight + " kg et je mesure " + this.size + " cm au garrot. Quand je suis content je fais " + this.bark + " !!!</div> </br><img id=\"bouledog\" src=\"" + this.photo + "\"/>"  );
+    }
+            }
+    
+            
+        }
+    
+        const michel = new Animal ("Michel" , 4 , "Jack-russel" , 5.6 , 55 , "Whhaaafff" , "Jack_russel.jpg" )
+        const rentanplan = new Animal ("Rantanplan" , 10 ,"Fox-terrier", 7.4 , 75 , "Grrrrrrrrrrrrrr" , "Fox_terrier.jpg" )
+        const balaise = new Animal ("Balaise", 2 , "Bouledog" , 8.6 , 89 , "Whoooouuuufffffffff" , "Bouldog.jpg" )
+        let liste = [michel,rentanplan,balaise]
+        liste.forEach(function(m){ m.presente()})
+
+        $("#jack").click(function(){
+
+            let speaknow = new SpeechSynthesisUtterance ('Je suis mignon adopter moi !')
+            window.speechSynthesis.speak(speaknow);
+            // $("img").append("<audio src='chien.mp3' autoplay></audio>");
+
+        })
+
+        $("#fox").click(function(){
+
+            let speaknow = new SpeechSynthesisUtterance ('Bonjour ! Woouuff ! je suis rantanplan G 10 ans ! Je suis un fox-terrier en forme ! Adopter moi ')
+            window.speechSynthesis.speak(speaknow);
+            $("#fox").append("<audio src='chien.mp3' autoplay></audio>");
+
+        })
+
+        $("#bouledog").click(function(){
+
+            let speaknow = new SpeechSynthesisUtterance ('les écouter pas je suis le plus mignon ! adopter moi !')
+            window.speechSynthesis.speak(speaknow);
+
+        })
+
+    </script>
+    
+</body>
+</html>

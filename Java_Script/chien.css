@@ -1,0 +1,26 @@
+
+
+    body{
+        background-color: rgb(141, 205, 207);
+        text-align: center;
+    }
+
+    img{border: 10px solid white}
+
+    div{ 
+        background-color: wheat;
+        width : 450px;
+        height: 100px;
+        margin : 0 auto; 
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 2px 2px #8d8a8a;
+        padding: 15px 15px 15px 15px;
+        }
+    
+    h1{
+        text-shadow: 2px 2px #8d8a8a ;
+    }
+
+    
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+
+    <style>
+            body{
+                background: #CECECE;
+                background: -moz-radial-gradient(center, #CECECE 0%, #82D1E8 54%, #1CABC5 100%);
+                background: -webkit-radial-gradient(center, #CECECE 0%, #82D1E8 54%, #1CABC5 100%);
+                background: radial-gradient(ellipse at center, #CECECE 0%, #82D1E8 54%, #1CABC5 100%);
+            }
+
+            section{
+                margin: 0 auto;
+                width: 1000px;
+                margin : 0 auto;                
+                border: 2px solid black;
+                box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+            }
+
+            h1 {
+                
+                margin: 0 auto;
+                width : 1000px;
+                text-align: center;
+                font-size: 70px;
+                color: #FFFFFF;
+                text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+                color: #FFFFFF;  
+                animation: 3s ease-in 1s infinite reverse both running slidein;             
+                }
+
+            .right {
+                position: absolute;
+                width: 100px;
+                height: 50px;
+                right: 120px;
+                top : 150px;
+            }
+
+            .left {
+                left: 120px;
+                top : 150px;
+                position: absolute;
+                width: 100px;
+                height: 50px;
+            }
+            
+            #bouton {
+
+                width: 100%;
+                height: auto;
+            }
+
+            #img {
+
+                animation: 3s ease-in 1s infinite reverse both running slidein;
+            }
+            
+
+
+    </style>
+
+    <script>
+    
+    $(document).ready(function(){
+      let tableau = ["img_mountains_wide.jpg" , "img_nature_wide.jpg" , "img_snow_wide.jpg"];
+      let compteur = 0
+      let time = 6000
+      
+
+        $(".right").click(function(){
+           
+            compteur++;
+
+           if(compteur>tableau.length-1){
+               compteur=0
+           }
+
+           $("#toto").attr("src",tableau[compteur])
+        
+    })
+
+        setInterval(function(){
+
+            compteur++;
+
+            console.log(compteur)
+
+           if(compteur>tableau.length-1){
+               compteur=0
+           }
+           $("#toto").attr("src",tableau[compteur])
+
+        } , time)
+        
+
+           $("#toto").attr("src",tableau[compteur])
+
+
+        $(".left").click(function(){
+           
+            compteur--;          
+
+           console.log(compteur)
+
+           if(compteur<0){
+               compteur=tableau.length-1
+           }
+
+           $("#toto").attr("src",tableau[compteur])
+
+           })
+
+           
+
+        
+})
+
+        
+</script>
+</head>
+<body>
+    <H1>Slide en Java</H1>
+    <div class="monBlock">
+    <!-- <button class="left"><img id="bouton" src="gauche.jpg" alt=""></button> -->
+    <!-- <button class="right"><img id="bouton" src="droite.jpg" alt=""></button> -->
+    
+    <section>
+
+        <div class="image" id="img"><img id="toto" src="img_mountains_wide.jpg" alt=""></div>
+        
+        
+    </section>
+
+    <input id="ChangeTime" type="text">
+    <button id="valtime">test</button>
+    </div>
+
+    
+
+
+    
+</body>
+</html>
