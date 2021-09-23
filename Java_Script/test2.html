@@ -94,9 +94,9 @@
             this.bark = laboiement;
             this.photo = photo;
         }
-        const michel = new Animal ("Michel" , 4 , "Jack-russel" , 5.6 , 55 , "s'il vous plait adopter moi !" , "Jack_russel.jpg" )
-        const rentanplan = new Animal ("Rantanplan" , 10 ,"Fox-terrier", 7.4 , 75 , "Je suis plus mignon que le Jack-russel ! Adopter moi !" , "Fox_terrier.jpg" )
-        const balaise = new Animal ("Balaise", 2 , "Bouledog" , 8.6 , 89 , "Je suis beau et fort ! Adopter moi !" , "Bouldog.jpg" )
+        const michel = new Animal ("Michel" , 4 , "Jack-russel" , 5.6 , 55 , "Je suis trop mignon ! s'il vous plait adopter moi !" , "Jack_russel.jpg" )
+        const rentanplan = new Animal ("Rantanplan" , 10 ,"Fox-terrier", 7.4 , 75 , "Je suis plus mignon que le Jack-russel ! s'il vous plait adopter moi !" , "Fox_terrier.jpg" )
+        const balaise = new Animal ("Balaise", 2 , "Bouledog" , 8.6 , 89 , "Je suis beau et fort ! s'il vous plait adopter moi !" , "Bouldog.jpg" )
         let liste = [michel,rentanplan,balaise]
         let tableau = ["Jack_russel.jpg" , "Fox_terrier.jpg" , "Bouldog.jpg"];
         let compteur = 0             
@@ -115,7 +115,7 @@
         })
 
         $("#toto").click(function(){
-        $("#comment").html("<h1>" + liste[compteur].race + "</h1> <div>Bonjour , je suis " + liste[compteur].nom + " et j'ai " + liste[compteur].age + " ans. Je fais " + liste[compteur].weight + " kg et je mesure " + liste[compteur].size + " cm au garrot. Quand je suis content je fais " + liste[compteur].bark + " !!!</div><br>")
+        $("#comment").html("<h1>" + liste[compteur].race + "</h1> <div>Bonjour , je suis " + liste[compteur].nom + " et j'ai " + liste[compteur].age + " ans. Je fais " + liste[compteur].weight + " kg et je mesure " + liste[compteur].size + " cm au garrot.</div><br>")
         let speaknow = new SpeechSynthesisUtterance (liste[compteur].bark)
             window.speechSynthesis.speak(speaknow);
         })

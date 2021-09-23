@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+
+    <style>
+            body{
+                background-image: url("bgforet3.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                height: 1000px;
+                cursor: url("coccinel.png"), pointer;
+            }
+
+            section{
+                margin: 0 auto;
+                width:700px;
+                margin : 15px auto 15px auto;
+                text-align: center;              
+               
+                /* box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px; */
+            }
+
+            h1 {                
+                margin: 15px auto 15px auto;                
+                text-align: center;
+                font-size: 70px;
+                color: #000000;
+                text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, rgb(99, 18, 18) 0px 0px 15px, #50ff2d 0px 0px 20px, #2dff50 0px 0px 30px, #5eff2d 0px 0px 40px, #2dff3e 0px 0px 50px, #68ff2d 0px 0px 75px;
+                color: #000000;  
+                }
+
+            span{
+
+                font: bolder;
+                font-size: 35px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: crimson;
+            }
+
+            .right {
+                
+                width: 3%;
+                position: absolute;
+                top: 25%;
+                right: 37%;               
+            }
+
+            .left {
+                
+                position: absolute;
+                top: 25%;
+                left: 37%;
+                width: 3%; 
+                
+            }
+            
+            #bouton {
+
+                width: 100%;
+                height: auto;
+            }
+
+            #img {
+
+                text-align: center;
+            }
+
+            #toto {
+
+                
+                border-style: solid;
+                border-width: 10px;
+                margin: 0 auto;
+                width: 420px;
+                height: 310px;
+            }
+            #comment{
+
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 25px;
+                margin : 15px auto 15px auto;
+                color: rgb(34, 122, 7);
+                background-color: rgba(255, 197, 95, 0.75);
+            }
+            #img {
+                margin: 0 auto;
+                width: 450px;
+                height: 350px;
+                background: white;
+                border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+                color: white;
+                box-shadow: 20px 20px rgba(0,0,0,.15);
+                transition: all .4s ease;
+                }
+            #img:hover {
+                border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+                box-shadow: 10px 10px rgba(0,0,0,.25);
+                }
+            
+
+
+    </style>
+
+    <script>
+    
+    $(document).ready(function(){
+
+
+        function Insect(lenom, larace, laboiement, photo) {
+            this.nom = lenom ;            
+            this.race = larace;
+            this.bark = laboiement;
+            this.photo = photo;
+        }
+        const arnaud = new Insect ("Arnaud" , "un Asticot" , "Bonjour je suis Arnaud l'Asticot" , "asticot.jpg" )
+        const rene = new Insect ("René" , "une Araignée" , "Bonjour je suis René l'Araignée" , "araignée.jpg" )
+        const sylvie = new Insect ("Sylvie" , "une Fourmie" , "Bonjour je suis Sylvie la Fourmie" , "fourmie.jpg" )
+        const bernard = new Insect ("Bernard" , "un Cafard" , "Bonjour je suis Bernard le Cafard" , "cafard.jpg" )
+        const anouch = new Insect ("Anouch" , "une Mouche" , "Bonjour je suis Anouch la Mouche" , "mouche.jpg")
+        let liste = [arnaud,rene,sylvie,bernard,anouch]
+        let tableau = ["asticot.jpg" , "araignée.jpg" , "fourmie.jpg" , "cafard.jpg" , "mouche.jpg"];
+        let compteur = 0             
+
+        $(".right").click(function(){
+           
+            compteur++;
+
+           if(compteur>tableau.length-1){
+               compteur=0
+           }
+           $("#comment").empty()
+
+           $("#toto").attr("src",tableau[compteur])       
+        
+        })
+
+        $("#toto").click(function(){
+        $("#comment").html("<div>Bonjour, je suis " + liste[compteur].nom + " et je suis <span>" + liste[compteur].race + "</span>.</div><br>")
+        let speaknow = new SpeechSynthesisUtterance (liste[compteur].bark)
+            window.speechSynthesis.speak(speaknow);
+        })
+
+        
+        $(".left").click(function(){
+           
+            compteur--;          
+
+           console.log(compteur)
+
+           if(compteur<0){
+               compteur=tableau.length-1
+           }
+           $("#comment").empty()
+
+           $("#toto").attr("src",tableau[compteur])
+
+           })
+
+
+
+
+
+           
+
+        
+})
+
+
+
+        
+</script>
+</head>
+<body>
+   
+    <H1>Les insectes</H1>
+    <div class="monBlock">
+    
+    <!-- <button class="left"><img id="bouton" src="gauche.jpg" alt=""></button>
+    <button class="right"><img id="bouton" src="droite.jpg" alt=""></button> -->
+    
+    <section>
+        
+        <div class="image" id="img"><img id="toto" src="insectes.jpg" alt=""></div>
+        <div id="comment"></div>
+        <div class="left"><img id="bouton" src="fgauche.png" alt=""></div>
+        <div class="right"><img id="bouton" src="fdroite.png" alt=""></div>
+        
+        
+        
+        
+    </section>
+
+    </div>
+
+    
+
+    
+
+
+    
+</body>
+</html>
