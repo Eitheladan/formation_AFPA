@@ -46,18 +46,18 @@
 
             .right {
                 
-                width: 3%;
+                width: 4%;
                 position: absolute;
                 top: 25%;
-                right: 37%;               
+                right: 35%;               
             }
 
             .left {
                 
                 position: absolute;
                 top: 25%;
-                left: 37%;
-                width: 3%; 
+                left: 35%;
+                width: 4%; 
                 
             }
             
@@ -113,10 +113,10 @@
     $(document).ready(function(){
 
 
-        function Insect(lenom, larace, laboiement, photo) {
+        function Insect(lenom, larace, laphrase, photo) {
             this.nom = lenom ;            
             this.race = larace;
-            this.bark = laboiement;
+            this.phrase = laphrase;
             this.photo = photo;
         }
         const arnaud = new Insect ("Arnaud" , "un Asticot" , "Bonjour je suis Arnaud l'Asticot" , "asticot.jpg" )
@@ -143,7 +143,7 @@
 
         $("#toto").click(function(){
         $("#comment").html("<div>Bonjour, je suis " + liste[compteur].nom + " et je suis <span>" + liste[compteur].race + "</span>.</div><br>")
-        let speaknow = new SpeechSynthesisUtterance (liste[compteur].bark)
+        let speaknow = new SpeechSynthesisUtterance (liste[compteur].phrase)
             window.speechSynthesis.speak(speaknow);
         })
 

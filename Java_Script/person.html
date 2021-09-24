@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+
+
+    <script>
+    
+    $(document).ready(function(){
+
+        function Person(lenom, lage, present) {
+            this.nom = lenom ;
+            this.age = lage ;
+            this.present = function present() {console.log("je m'appelle " + this.nom + " et j'ai " + this.age + " ans ")}
+        }
+        Person.prototype.affiche = function(){
+            console.log("je m'appelle " + this.nom + " et j'ai " + this.age + " ans ")
+        }
+        const michel = new Person ("Michel" , 40)
+        const patrick = new Person ("Patrick" , 35)
+
+        let liste = [michel,patrick]
+
+        for (i=0 ; i<Person.length ; i++){
+
+            
+        }
+
+        liste.forEach(function(m){ m.affiche()})
+        
+})
+
+
+
+        
+</script>
+</head>
+<body>
+
+
+    
+</body>
+</html>
