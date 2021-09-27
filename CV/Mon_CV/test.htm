@@ -1,0 +1,108 @@
+.skill{
+
+    display : flex;
+    border: 2px solid #9da2ad;
+    padding: 4em;
+    border-radius: 30px;
+}
+
+.skill::before{
+
+    content: "Mes compétences";
+    position: absolute;
+    background-color: red;
+}
+.skill .name{
+    display: flex;
+    flex-direction: column;
+    color: #6d7587;
+    font-size: 2em;
+    font-weight: 500;
+    margin-right: 40px;
+    
+}
+
+.skill .name span{   
+    
+    margin: 15px 0;
+    box-shadow: 6px 6px 15px #D9DADE, -6px -6px 15px #FFFFFF;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 50px;
+    border: 5px solid #6d7587;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.skill .name span:hover{   
+    
+    margin: 15px 0;
+    box-shadow: 6px 6px 15px #D9DADE, -6px -6px 15px #FFFFFF
+    inset 6px 6px 15px #D9DADE, inset -6px -6px 15px #FFFFFF;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 50px;
+    border: 5px solid #6d7587;
+}
+.bar-container {
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.bar{
+
+    width: 400px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 6px #D9DADE, inset -6px -6px 6px #FFFFFF;
+
+}
+
+.bar .progress {
+
+    height: 100%;
+    width: 50%;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.bar:nth-child(1) .progress {
+
+    height: 100%;
+    
+}
+.bar:nth-child(2) .progress {
+
+    height: 100%;
+    
+}
+.bar:nth-child(3) .progress {
+
+    height: 100%;
+    
+}
+.bar:nth-child(4) .progress {
+
+    height: 100%;
+    
+}
+.bar:nth-child(5) .progress {
+
+    height: 100%;
+    
+}
+
+<div class="skill">
+          <div class="name">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>HTML</span>
+            <span>HTML</span>
+            <span>HTML</span>
+          </div>  
+          <div class="barre-container"></div>
+          <div class="bar"><div class="progress"></div></div>
+          <div class="bar"><div class="progress"></div></div>
+          <div class="bar"><div class="progress"></div></div>
+        </div>

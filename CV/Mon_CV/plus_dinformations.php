@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
+<?php
 
-    require_once("header.php") ;
-    
-    ?>
+require_once("header.php") ;
+
+?>
 
     <div class="container">
         <div class="test1"></div>
@@ -189,6 +189,10 @@
         <div class="test"></div>
         <div class="test"></div>
     </div>
-    
+    <?php
+
+require_once("footer.php") ;
+
+?>
 </body>
 </html>

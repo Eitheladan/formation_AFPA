@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
+<?php
 
-    require_once("header.php") ;
-    
-    ?>
+require_once("header.php") ;
 
+?>
     <div class="container">
         <div class="test1"></div>
         <div class="test2"></div>
@@ -189,16 +188,11 @@
         <div class="test"></div>
         <div class="test"></div>
     </div>
-<footer>
+    <?php
 
+require_once("footer.php") ;
 
-    <div>Ceci est le footer</div>
-
-
-
-
-
-</footer>
+?>
     
 </body>
 </html>

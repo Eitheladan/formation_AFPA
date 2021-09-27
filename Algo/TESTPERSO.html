@@ -1,0 +1,55 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    
+    <script>
+
+        var tableau=[5,4,2,3,7,1]
+
+        console.log (tableau)
+        
+
+        function tribulle(t){
+            for (var i=t.length ; i>1 ; i --) {
+                for (var j=t.length ; j<i-1 ; j --){
+
+                    if (t[j+1] < t[j]){
+
+                        var temp=t[j]
+
+                        t[j]=t[j+1]
+                        t[j+1]=temp
+                    }
+                }
+
+                
+        }
+        
+        }
+
+        
+            console.log (tableau)
+            console .log (tribulle(tableau))
+
+            
+
+
+
+
+
+        
+    </script>
+
+</head>
+<body>
+
+    <p> test </p>
+    <p> test </p>
+    <p> test </p>
+
+    
+    
+</body>
+</html>

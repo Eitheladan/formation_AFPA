@@ -190,16 +190,11 @@ require_once("header.php") ;
         <div class="test"></div>
     </div>
 
-    <footer>
+    <?php
 
+require_once("footer.php") ;
 
-        <div>Ceci est le footer</div>
-    
-    
-    
-    
-    
-    </footer>
+?>
     
 </body>
 </html>
