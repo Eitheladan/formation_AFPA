@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: auto;
+        }
+        div{
+            background: linear-gradient(
+                180deg,
+                red 0%,
+                black 50%
+            );
+            position: absolute;
+            border: 1px solid red;
+            border-radius: 20px;
+            transform-origin: bottom center;
+            inset: 0;
+        }
+        /* transform-origin = point "d'encrage" */
+        /* inset = top + right + bottom + left */
+        #h{
+            width: 14px;
+            height: 200px;
+            top: 100px;
+            animation: hrlg 43200s infinite linear;
+        }
+        /* 43200s = 12h (1 tour d'horloge) */
+        #m{
+            width: 10px;
+            height: 250px;
+            top: 50px;
+            animation: hrlg 3600s infinite linear;
+        }
+        /* infinite = l'animation sera lu en boucle */
+        /* linear = vitesse constante */
+        #s{
+            width: 6px;
+            height: 300px;
+            animation: hrlg 60s infinite steps(60);
+        }
+        /* steps() = nombre "d'étapes" avant fin d'animation */
+        @keyframes hrlg{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        /* @keyframes sert à définir les différentes étapes de l'animation */
+        /* hrlg = nom de l'animation attribué dans "animation:..;".  */
+    </style>
+</head>
+<body>
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/javascript.js@0.0.0/lib/index.min.js"></script>
+    <title>Document</title>
+
+
+<script>
+        
+        
+        let person = { name: "jhon" , lastname:"smith" , age:24}
+
+        for ( let property in person){
+
+            console.log(` console.log ${property} : $ { person[property] } `)
+        }
+
+        
+        let tab = [3,4,5]
+
+        tab.forEach(function(elementCourant, index){
+
+        console.log(index +":" +  elementCourant);
+
+        
+    })
+
+        let age = 4 ;
+
+        if (age>0) {
+
+            console.log("vrai");
+        }else{
+            console.log("faux");
+        }
+
+    let speed = "60"
+// change le type string en number
+    console.log(typeof speed); //string
+    console.log(typeof +speed); //number
+
+    var vitesse =+speed
+
+    console.log(typeof vitesse);
+
+    let speed2 = 1000
+    speed2 += "" 
+
+    console.log(typeof speed) //string
+
+    let speed3 = 200 ;
+    let taille ;
+    if (speed > 100 ){
+
+        taille = "grand";
+    }else{
+
+        taille = "petit"
+
+    }
+
+    // equivalent
+
+
+    let taille2 = speed3 > 100 ? "grand" : "petit"
+
+    console.log(taille2);
+
+    // autre example
+
+    let speed4 = 40;
+
+    if (speed4<30) {
+
+        console.log("slow");
+    }else if(speed4 > 60){
+
+        console.log("fast");
+    }else{
+
+        console.log("entre 30 et 60");
+    }
+
+    let speed5 = 80
+
+    let allure = speed5 < 30 ? "slow" : speed5 > 60 ? "fast" : "entre 30 et 60" ;
+
+    console.log(allure);
+
+    let employes1 = ["jame","john"]
+    let employes2 = ["annie","elsa"]
+
+    let employes = [...employes1, ...employes2]
+    console.log(employes)
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

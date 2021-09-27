@@ -6,150 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
+    <link href="file:///C:/laragon/www/formation_AFPA/CV/Mon_CV/moncv.css" rel="stylesheet">
     <title>Mon CV</title>
-<style>
-    
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    
-    .container {
-
-        display: grid;
-        grid-template-rows: repeat(18,1fr);
-        grid-template-columns: repeat(18,1fr);
-        width: 1500px;
-        height: 900px;
-        background-color: rgb(243, 205, 134);
-        margin: 0 auto;
-        box-shadow: 10px 10px 15px rgba(114, 103, 103, 0.61);
-    }
-
-    .container div{
-
-        border: 1px solid   black;
-    }
-
-    .test1{
-
-        grid-area: "header";        
-        grid-area: 1/6/4/14;
-        background-color: blue;
-        text-align: center;
-
-    }
-
-    .nom{
-
-        font-weight: bolder;
-        border: 1px solid   black;
-        border-radius: 10px;
-        width: 100%;
-        font-size: 30px;
-        margin: auto;
-        margin-top: 50px;
-        padding: 15px 0px;
-        background-color: chartreuse;
-
-    }
-    
-    .test2{
-
-        grid-area: "photo";
-        grid-area:5/8/12/12;
-        background-color: rgb(247, 0, 255);
-
-    }
-
-    .photo{
-
-        text-align: center;
-        border: none;
-
-    }
-    .photo img{
-
-        border-radius: 50%;
-        border: 8px solid   white;
-
-    }
-
-    .test3{
-
-        grid-area: "exp";
-        grid-area: 4/1/12/8;
-        background-color: rgb(153, 170, 0);
-        
-
-    }
-    
-    ul{
-
-        margin-left: -8px;
-    }
-    .premiernv li{
-        font-size: 16px;
-        color: rgb(28, 68, 141);
-        margin-left: 0px;
-        font-weight: bold;
-
-
-    }
-    .secondnv li{
-        font-size: 12px;
-        color: black;
-    }
-    .test4{
-
-        grid-area: "form";
-        grid-area: 4/12/12/19;
-        background-color: rgb(170, 0, 0);
-
-    }
-    .test5{
-
-        grid-area: "comp";
-        grid-area: 12/1/19/7;
-        background-color: rgb(0, 170, 156);
-
-    }
-    .test6{
-
-        grid-area: "contact";
-        grid-area:12/7/19/13;
-        background-color: rgb(252, 221, 50);
-
-    }
-    .test7{
-
-        grid-area: "loisir";
-        grid-area: 12/13/19/19;
-        background-color: rgb(22, 53, 99);
-
-    }
-
-    nav{
-
-        width: 800px;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 10px 10px 15px rgba(114, 103, 103, 0.61);
-        font-size: 18px;
-        color: white;
-        font-weight: bolder;
-        text-align: center;
-    }
-    
-
-
-</style>
-
-
 </head>
 <body>
-
+<header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"></a>
@@ -159,97 +20,31 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                <a class="nav-link active" aria-current="page" href="file:///C:/laragon/www/formation_AFPA/CV/Mon_CV/Mon_CV.html">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Expérience</a>
+                <a class="nav-link" href="file:///C:/laragon/www/formation_AFPA/CV/Mon_CV/experience.html">Expérience</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacte</a>
+                <a class="nav-link" href="file:///C:/laragon/www/formation_AFPA/CV/Mon_CV/contacte.html">Contacte</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Plus d'information</a>
+                <a class="nav-link" href="file:///C:/laragon/www/formation_AFPA/CV/Mon_CV/plus_dinformations.html">Plus d'information</a>
               </li>
               
             </ul>
             
           </div>
         </div>
-      </nav>
+    </nav>
+</header>
 
     <div class="container">
-
-        <div class="test1">
-            <div class="nom">
-                    François MOCCATTI
-            </div>
-
-
-
-        </div>
-        <div class="test2">
-            <div class="photo"><img src="C:\laragon\www\formation_AFPA\CV\ma_photo.jpg" alt="Ma photo"></div>
-        </div>
-        <div class="test3">
-            <ul class="premiernv">
-                <li>2015 – 2021 : Webmaster Joomla/SharePoint – BA 106 Bordeaux
-                    <ul class="secondnv">
-                        <li>Création et animation de la page de l’unité sur SharePoint</li>
-                        <li>Animation du site pour le briefing des hautes autorités sur Joomla</li>
-                        <li>Création de tutoriels pour la formation des différents intervenants Joomla/SharePoint</li>
-                    </ul>
-                </li>
-                <li>2012 – 2015 : Webmaster Joomla – BA 942 Lyon 
-                    <ul class="secondnv">
-                        <li>Création du site pour le briefing des hautes autorités sur Joomla. Réduction du temps de briefing de 1h00 à 35mn en changeant le support (Powerpoint --> Site web)</li>
-                        <li>Animation du briefing des hautes autorités</li>
-                        <li>Formation des différents intervenants Joomla</li>
-                    </ul>
-
-                </li>
-                <li>2007 – 2012 : Correspondant informatique du Commandement – BA 128 Metz
-                    <ul class="secondnv">
-                        <li>Mise en place de modèles types pour simplifier et uniformiser la correspondance du Commandement</li>
-                        <li>Gestion des pannes</li>
-                        <li>Gestion des mises à jour logiciels</li>
-                        <li>Aide sur l’utilisation du pack Microsoft office</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-            
-        </div>
+        <div class="test1"></div>
+        <div class="test2"></div>
+        <div class="test3"></div>
         <div class="test4"></div>
-        <div class="test5">
-            <div>Compétence</div>
-            
-                <div class="expe"><label for="file">HTML :</label>
-                <progress id="file" max="100" value="100"> 100% </progress></div>
-                
-                <div class="expe"><label for="file">CSS :</label>
-                <progress id="file" max="100" value="85"> 85% </progress></div>
-            
-                <div class="expe"><label for="file">Bootstrap : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-                
-                <div class="expe"><label for="file">Java Script : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file">Jquery : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file">PHP : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file"> : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-
-            <div class="expe"></div>
-            <div class="expe"></div>
-        </div>
+        <div class="test5"></div>
         <div class="test6"></div>
         <div class="test7"></div>
         <div class="test"></div>
@@ -426,16 +221,18 @@
         <div class="test"></div>
         <div class="test"></div>
         <div class="test"></div>
-        
-        
-        
-       
-        
-        
-        
-       
-
     </div>
+
+    <footer>
+
+
+        <div>Ceci est le footer</div>
+    
+    
+    
+    
+    
+    </footer>
     
 </body>
 </html>
