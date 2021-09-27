@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+         const animals = [
+                { "Name": "cat", "size": "little", "Weight": 5 } , 
+                { "Name": "puppy", "size": "little", "Weight": 10 } , 
+                { "Name": "Lion", "size": "medium", "Weight": 150} , 
+                { "Name": "elephant", "size": "big", "Weight": 5000 },
+                ]
+        var animalname = [ ]
+        var animal_little = []
+
+        for (var i = 0 ; i<animals.length ; i ++){
+
+            animalname.push (animals[i].Name)
+
+        }
+
+        animals.forEach(element => {
+
+            animalname.push(element.Name)
+            
+        });
+
+        let animal_name = animals.map((element) => { return element.Name; })
+
+        for (var i =0 ; i<animals.length ; i ++){
+
+            if (animals[i].size=="little") {
+
+                animal_little.push (animals[i])
+                
+            }            
+        }
+
+        let animals_small2 = animals.filter((element) => { return element.size === "little" })
+
+        console.log(animal_little)        
+        console.log(animalname)
+        console.log(animal_name)
+        console.log(animals_small2);
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
