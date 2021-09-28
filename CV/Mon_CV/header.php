@@ -27,7 +27,7 @@
                 <a class="nav-link" href="experience.php"><i class="bi bi-file-earmark-code"></i>Expérience</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacte.php"><i class="bi bi-file-person"></i>Contacte</a>
+                <a class="nav-link" href="contacte.php"><i class="bi bi-file-person"></i>Contact</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="CV_FRANCOIS_MOCCATTI_DEV_WEB.pdf"><img style="height: 25px; width: auto;" src="pdf.png" alt="Mon CV"></a>

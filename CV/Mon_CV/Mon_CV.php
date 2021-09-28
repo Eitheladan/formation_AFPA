@@ -10,7 +10,7 @@ require_once("header.php") ;
 
         <div class="test1">
             <div class="nom">
-                    François MOCCATTI
+                    <span>D</span>éveloppeur <span>W</span>eb et <span>W</span>eb <span>M</span>obile
             </div>
 
 
@@ -23,9 +23,6 @@ require_once("header.php") ;
             
             <div class="flex-container">
 
-            <h1>Parcours professionnel</h1>
-            
-                
                 <div class="flex-row">
                   <div class="flex-col-md-6">
                     <div class="panel">
@@ -83,45 +80,33 @@ require_once("header.php") ;
               </div><!-- flex-container-->
             
         </div>
-        <div class="formations">
-          <h1 >Formations</h1>
-          
-        <ul>
-          <li>Formation Joomla	2012</li>
-          <li>Formation SharePoint	2017</li>
-          <li>Fomation Développeur Web et Web mobile 2021</li>
-        </ul>
+        <div class="formations">                    
+          <ul>
+            <li>Formation Joomla	2012</li>
+            <li>Formation SharePoint	2017</li>
+            <li>Fomation Développeur Web et Web mobile 2021</li>
+          </ul>
         </div>
         
-        <div class="test5">
-            <div class="cmpt">Compétence</div>            
-                
-
-                
-                <div class="expe"><label for="file">HTML:</label>
-                <progress id="file" max="100" value="85"> 85% </progress></div>
-
-                <div class="expe"><label for="file">CSS : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file">Bootstrap : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-                
-                <div class="expe"><label for="file">Java Script : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file">Jquery : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                <div class="expe"><label for="file">PHP : </label>
-                <progress id="file" max="100" value="50"> 70% </progress></div>
-            
-                
-
-            <div class="expe"></div>
-            <div class="expe"></div>
+        <div class="competence">
+            <div class="skill">
+              <div class="name">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>HTML</span>
+                <span>HTML</span>
+                <span>HTML</span>
+              </div>  
+              <div class="bar-container">
+                <div class="bar"><div class="progress"></div></div>
+                <div class="bar"><div class="progress"></div></div>
+                <div class="bar"><div class="progress"></div></div>
+                <div class="bar"><div class="progress"></div></div>
+                <div class="bar"><div class="progress"></div></div>
+              </div>
+          </div>
         </div>
-        <div class="test6"></div>
+        
         <div class="test7">
 
         <h1 class="loisirs">Loisirs</h1>

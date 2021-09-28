@@ -2,7 +2,8 @@
     
     body{
         font-family: Arial, Helvetica, sans-serif;
-        background-image:url("bandeau.jpg");
+        /* background-image:url("bandeau.jpg"); */
+        background : linear-gradient(153deg, rgba(10, 53, 170, 0.534) 33%, rgb(255, 255, 255) 66%, rgba(10, 53, 170, 0.534) 100%);
         background-repeat: no-repeat;
         background-size: 100% ;
         height: 1000px;
@@ -49,14 +50,22 @@
         margin-top: 50px;
         padding: 15px 0px;
         background: rgb(131,58,180);
-        background: linear-gradient(153deg, rgba(10, 53, 170, 0.534) 0% 33%, rgb(255, 255, 255)33% 66%, rgba(10, 53, 170, 0.534) 66% 100%);
+        /* background: linear-gradient(153deg, rgba(10, 53, 170, 0.534) 0% 33%, rgb(255, 255, 255)33% 66%, rgba(10, 53, 170, 0.534) 66% 100%); */
+        background: linear-gradient(153deg, rgba(10, 53, 170, 0.534) 33%, rgb(255, 255, 255) 66%, rgba(10, 53, 170, 0.534) 100%);
 
+    }
+
+    .nom span{
+
+
+        font-size: 45px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     
     .test2{
 
         grid-area: "photo";
-        grid-area:5/8/12/12;
+        grid-area: 4/1/12/6;
         background-color: rgb(255, 255, 255);
 
     }
@@ -77,22 +86,27 @@
     .pro{
 
         grid-area: "exp";
-        grid-area: 4/1/12/8;       
-        /* border: 2px solid rgb(61, 60, 60); */
-        border-radius: 5px; 
+        grid-area: 5/6/14/19;
+        border: 2px solid #9da2ad;
+        padding: 1em;
+        border-radius: 30px;
+        background-color: white;
     }
 
-    .pro h1{
+    .pro::before{
 
-        text-align: center;
-        font-size: 1.8em;
+        content: "Mon Parcours Professionnel";
+        position: absolute;
+        background-color: #ffffff;
+        top : 21.5%;
+        left : 40%;
+        padding-left : 10px;
+        padding-right : 10px;
+        font-size : 1.em;
         color :rgb(95, 15, 15);
-        font-weight: bolder;
-        margin-bottom: 5px;
-        margin-top : 5px;
-
     }
-    
+
+        
     ul{
 
         margin-left: -8px;
@@ -121,12 +135,26 @@
     .formations{
 
         grid-area: "form";
-        grid-area: 4/12/12/19;
-        
-        border: 2px solid rgb(61, 61, 61);
-        border-radius: 5px;
+        grid-area: 14/6/19/13;        
+        border: 2px solid #9da2ad;
+        padding: 1em;
+        border-radius: 30px;
         padding-top: 20px;
+        margin-top: 10px;
         
+    }
+
+    .formations::before{
+
+        content: "Mes formations";
+        position: absolute;
+        background-color: #ffffff;
+        top : 69%;
+        left : 40%;
+        padding-left : 10px;
+        padding-right : 10px;
+        font-size : 1.3em;
+        color :rgb(95, 15, 15);
     }
 
     .formations h1{
@@ -154,15 +182,118 @@
         width: 25px; /* same as padding-left set on li */
       }
 
-    .test5{
+    .competence{
 
         grid-area: "comp";
-        grid-area: 12/1/19/7;
-        background-color: rgb(206, 206, 206);
-        /* border: 5px solid black; */
-        border-radius: 5px;
-        margin-top : 5px;
-        padding: 10px;
+        grid-area: 12/1/19/6;     
+    }
+
+    .skill {
+
+        display : flex;
+        border: 2px solid #9da2ad;
+        padding: 1em;
+        border-radius: 30px;
+        width: 350px;
+    }
+
+    .skill::before{
+
+        content: "Mes compétences";
+        position: absolute;
+        background-color: #ffffff;
+        top : 57.3%;
+        left : 19%;
+        padding-left : 10px;
+        padding-right : 10px;
+        font-size : 1.3em;
+        color :rgb(95, 15, 15);
+    }
+    .skill .name{
+        display: flex;
+        flex-direction: column;
+        color: #6d7587;
+        font-size: 1em;
+        font-weight: 500;
+        margin-right: 40px;
+        
+    }
+    
+    .skill .name span{   
+        
+        margin: 5px 0;
+        box-shadow: 6px 6px 15px #b2b3b6, -6px -6px 15px #FFFFFF;
+        padding: 10px 10px;
+        text-align: center;
+        border-radius: 40px;
+        border: 3px solid #6d7587;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    
+    .skill .name span:hover{   
+        
+        /* margin: 5px 0; */
+        box-shadow: 6px 6px 15px #abacaf, -6px -6px 15px #FFFFFF,
+        inset 6px 6px 15px #aaabad, inset -6px -6px 15px #FFFFFF;
+        padding: 15px 15px;
+        text-align: center;
+        border-radius: 40px;
+        border: 3px solid #6d7587;
+        /* background-color: blue; */
+    }
+    .bar-container {
+    
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .bar{
+    
+        width: 200px;
+        height: 20px;
+        border-radius: 20px;
+        box-shadow: inset 6px 6px 6px #D9DADE, inset -6px -6px 6px #FFFFFF;
+    
+    }
+    
+    .bar .progress {
+    
+        height: 100%;
+        width: 50%;
+        background-color: red;
+        border-radius: 20px;
+    }
+    
+    .bar:nth-child(1) .progress {
+    
+        height: 100%;
+        width: 100%;
+        
+    }
+    .bar:nth-child(2) .progress {
+    
+        height: 100%;
+        width: 100%;
+        
+    }
+    .bar:nth-child(3) .progress {
+    
+        height: 100%;
+        width: 100%;
+        
+    }
+    .bar:nth-child(4) .progress {
+    
+        height: 100%;
+        width: 100%;
+        
+    }
+    .bar:nth-child(5) .progress {
+    
+        height: 100%;
+        width: 100%;
+        
     }
 
     .cmpt{
@@ -180,20 +311,10 @@
         margin-left: 15px;
     }
 
-    .test6{
-
-        grid-area: "contact";
-        grid-area:12/7/19/13;
-        background-color: rgb(252, 221, 50);
-        border: 5px solid black;
-        border-radius: 5px;
-        margin: 5px;
-    }
-
     .test7{
 
         grid-area: "loisir";
-        grid-area: 12/13/19/19;
+        grid-area: 14/13/19/19;
         background-color: rgb(22, 53, 99);
         border: 5px solid black;
         border-radius: 5px;
