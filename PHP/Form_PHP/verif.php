@@ -6,14 +6,10 @@ $monfichier = fopen("password.txt", "r") or die("pas de fichier tu es mort sale 
 $nom = $_POST ["nom"];
 $mdp = $_POST ["mdp"];
 $login=$nom.";".$mdp;
-
-
     
     $existe=false;
 
-    while(!feof($monfichier)){
-
-        
+    while(!feof($monfichier)){        
 
         $maligne =  fgets($monfichier);
 
@@ -25,23 +21,18 @@ $login=$nom.";".$mdp;
         
         if ($nom == $tag && $mdp == $verif){
 
-            echo ("<div style = 'text-align:center'><h1>Bonjour ".$nom."</h1><br><img src='mdpok.gif'/></div><script>
+            header('Location:accueil.php');
 
-            let speaknow = new SpeechSynthesisUtterance ('Bonjour Bienvenue sur mon Site')
-                        window.speechSynthesis.speak(speaknow);
-                        
-                        </script>"); $existe=true; break;
+            exit;            
         }               
     }
 
     if (!$existe){
         
-        echo ("<div style = 'text-align:center'><h1>Login ou mot de passe faux.</h1><br><img src='mdpfaux.gif'/></div><script>
+        header('Location:veriflog.php?message="erreur"'); 
 
-        let speaknow = new SpeechSynthesisUtterance ('Bonjour le site est réservé à une clientelle prestigieuse ! toi tu es un flan')
-                    window.speechSynthesis.speak(speaknow);
-                    
-                    </script>");
-}
+        exit;
+
+    }
 ?>
 
