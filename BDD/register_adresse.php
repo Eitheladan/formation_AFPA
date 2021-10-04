@@ -39,25 +39,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
             font-family: arial;
         }
 
-        .container{
-
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            text-align : center;
-            position : absolute;
-            top: 26%;
-            left: 38%;
-            padding-top : 5px;
-            border-width: 2px; 
-            border-style: solid; 
-            border-color: black; 
-            width: 450px; 
-            height: 250px;
-            background-color: RGBA(92,184,80,0.84); 
-            border-radius: 15px;
-        }
-
         .container2{
 
             display: flex;
@@ -65,7 +46,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
             flex-wrap: wrap;
             text-align : center;
             position : absolute;
-            top: 56%;
+            top: 36%;
             left: 38%;
             padding-top : 5px;
             border-width: 2px; 
@@ -102,22 +83,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <body style="background-image:url('fond.jpg')">
 
 <div class="bigbox">
-    <h1 class="titre">ENREGISTREMENT</h1>
-    <form action="insert01.php" method="POST">
-        <div class="container">
-            <div class="form">Email: <br><input type="text" name="email"></div>
-            <div class="form">Nom : <br><input type= "text" name="nom" id=""></div>
-            <div class="form">Prénom : <br><input type= "text" name="prenom" id=""></div>
-            <div class="form">Mot de passe : <br><input type= "text" name="mdp" id=""></div>
-            <div class="form"><br>
-                <label for="role">Rôle : </label>
-                <select id="role" name="role">
-                    <option value="Admin">Admin</option>
-                    <option value="client">Client</option>
-                </select>
-            </div>
-            <div class="form">Téléphone : <br><input type= "text" name="tph" id=""></div>  
-        </div>  
+    <h1 class="titre">ENREGISTREMENT ADRESSE</h1>
+    <form action="insert_adresse.php" method="POST">
         <div class="container2">        
             <div class="form">numero rue : <br><input type="text" name="numero"></div>
             <div class="form"><br>
@@ -129,8 +96,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
                     <option value="Chemin">Chemin</option>
                 </select>
             </div>
-            <div class="form">Adresse :<br><input type= "text" name="adresse1" id=""></div>
-            <div class="form">Complément :<br><input type= "text" name="adresse2" id=""></div>
+            <div class="form">Adresse : <br><input type= "text" name="adresse1" id=""></div>
+            <div class="form">Complément : <br><input type= "text" name="adresse2" id=""></div>
             <div class="form">code postal : <br><input type= "text" name="code_post" id=""></div>
             <div class="form">Ville : <br><input type= "text" name="ville" id=""></div>
             

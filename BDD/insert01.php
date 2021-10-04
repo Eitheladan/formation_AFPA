@@ -1,18 +1,39 @@
-
-
 <?php
 
-$bdd = new PDO("mysql:host=localhost;dbname=formation","root","");
+$bdd = new PDO("mysql:host=localhost;dbname=formation;charset=UTF8","root","");
 
-$email= $_POST["email"];
-$password=$_POST["mdp"];
-$nom=$_POST["nom"];
-$prenom=$_POST["prenom"];
-$role = $_POST["role"];
-$tph = $_POST["tph"];
+$email = htmlspecialchars($_POST["email"]);
+$password = htmlspecialchars($_POST["mdp"]);
+$hash = password_hash($password,PASSWORD_DEFAULT);
+$nom = htmlspecialchars($_POST["nom"]);
+$prenom = htmlspecialchars($_POST["prenom"]);
+$role = htmlspecialchars($_POST["role"]);
+$tph = htmlspecialchars($_POST["tph"]);
 
-$sql = $bdd->prepare ("INSERT INTO `utilisateur` (`email`, `password`, `nom`, `prenom`, `role`, `tph`) VALUES (?, ?, ?, ?, ?, ?);") ;
-$sql->execute(array($email,$password,$nom,$prenom,$role,$tph));
+$sql = $bdd->prepare ("INSERT INTO `utilisateur` (`email`, `motdepasse`, `nom`, `prenom`, `role`, `tph`) VALUES (?, ?, ?, ?, ?, ?);") ;
+$sql->execute(array($email,$hash,$nom,$prenom,$role,$tph));
+
+
+$sql = 'SELECT * FROM utilisateur WHERE email= ?';
+$result = $bdd->prepare($sql);
+$result->execute(array($email));
+$row= $result->fetch();
+
+$id_utilisateur=$row['id'];
+$numero = htmlspecialchars($_POST["numero"]);
+$voie = htmlspecialchars($_POST["voie"]);
+$adresse1 = htmlspecialchars($_POST["adresse1"]);
+$adresse2 = htmlspecialchars($_POST["adresse2"]);
+$code_post = htmlspecialchars($_POST["code_post"]);
+$ville = htmlspecialchars($_POST["ville"]);
+
+
+$sql2 = $bdd->prepare ("INSERT INTO `adresse` (`id_utilisateur`, `numero`, `voie`, `adresse1`, `adresse2`, `code_post`,`ville`) VALUES (?, ?, ?, ?, ?, ?,?);") ;
+$sql2->execute(array($id_utilisateur,$numero,$voie,$adresse1,$adresse2,$code_post,$ville));
+
+
+
+header('Location:login.php');
 
 ?>
 
