@@ -1,6 +1,10 @@
 <?php
 
+// ouverture de la bdd
+
 $bdd = new PDO("mysql:host=localhost;dbname=formation;charset=UTF8","root","");
+
+// enregistrement bdd utilisateur
 
 $email = htmlspecialchars($_POST["email"]);
 $password = htmlspecialchars($_POST["mdp"]);
@@ -10,16 +14,13 @@ $prenom = htmlspecialchars($_POST["prenom"]);
 $role = htmlspecialchars($_POST["role"]);
 $tph = htmlspecialchars($_POST["tph"]);
 
-$sql = $bdd->prepare ("INSERT INTO `utilisateur` (`email`, `motdepasse`, `nom`, `prenom`, `role`, `tph`) VALUES (?, ?, ?, ?, ?, ?);") ;
-$sql->execute(array($email,$hash,$nom,$prenom,$role,$tph));
 
+$sql = $bdd->prepare ("INSERT INTO `utilisateur` (`email`, `motdepasse`, `nom`, `prenom`, `tph`) VALUES (?, ?, ?, ?, ?);");
+$sql->execute(array($email,$hash,$nom,$prenom,$tph));
 
-$sql = 'SELECT * FROM utilisateur WHERE email= ?';
-$result = $bdd->prepare($sql);
-$result->execute(array($email));
-$row= $result->fetch();
+// enregistrement bdd adresse
 
-$id_utilisateur=$row['id'];
+$id_utilisateur=$bdd->lastInsertId();
 $numero = htmlspecialchars($_POST["numero"]);
 $voie = htmlspecialchars($_POST["voie"]);
 $adresse1 = htmlspecialchars($_POST["adresse1"]);
@@ -31,7 +32,30 @@ $ville = htmlspecialchars($_POST["ville"]);
 $sql2 = $bdd->prepare ("INSERT INTO `adresse` (`id_utilisateur`, `numero`, `voie`, `adresse1`, `adresse2`, `code_post`,`ville`) VALUES (?, ?, ?, ?, ?, ?,?);") ;
 $sql2->execute(array($id_utilisateur,$numero,$voie,$adresse1,$adresse2,$code_post,$ville));
 
+// // enregistrement bdd role
 
+// $sql3 = $bdd->prepare ("INSERT INTO `role` (`type`) VALUES (?);") ;
+// $sql3->execute(array($role));
+
+// parcours de la bdd role pour enregistrement de l'id role
+
+print_r($role);
+
+$sql3 = "SELECT * FROM role WHERE type=?";
+$result2 = $bdd->prepare($sql3);
+$result2->execute(array($role));
+$row2 = $result2->fetch();
+
+$id_role = $row2['id'];
+
+print_r($id_role);
+
+$sql4 = $bdd->prepare("UPDATE `utilisateur` SET `role`=:id_role WHERE id=:id_utilisateur;");
+$sql4->execute(array(
+
+    'id_role'=>$id_role,
+    'id_utilisateur'=>$id_utilisateur,
+));
 
 header('Location:login.php');
 

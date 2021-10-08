@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=formation;charset=UTF8','root','') ;
+$bdd = new PDO('mysql:host=localhost;dbname=mon_e_commerce;charset=UTF8','root','') ;
 
 // contre les attaques XSS utiliser htmlspecialchars (php)
 
@@ -12,14 +12,15 @@ $mdp_verif = "SELECT * FROM utilisateur WHERE email=?";
 $req_mdp = $bdd->prepare($mdp_verif);
 $req_mdp->execute(array($login));
 $case=$req_mdp->fetch();
-$id=$case['id'];
-$mdp_claire=$case['motdepasse'];
+$id=$case['id_client'];
+$mdp_claire=$case['mdp'];
 $nom=$case['nom'];
 $prenom=$case['prenom'];
-$role=$case['role'];
-$tph=$case['tph'];
+$entreprise=$case['entreprise'];
+$role=$case['id_role'];
 
-$role_verif= "SELECT * FROM role WHERE id=?";
+
+$role_verif= "SELECT * FROM role WHERE id_role=?";
 $req_role = $bdd->prepare($role_verif);
 $req_role->execute(array($role));
 $case2=$req_role->fetch();
@@ -62,13 +63,3 @@ if(isset($_POST['valider'])){
 }
 
 ?>
-
-SELECT utilisateur.nom, utilisateur.prenom, adresse.numero, adresse.rue, adresse.cp, adresse.ville FROM utilisateur,adresse WHERE adresse.id_utilisateur = utilisateur.id
-SELECT utilisateur.nom AS nom utilisateur.prenom AS prenom FROM utilisateur AS u, adresse AS ad WHERE ad.id_utilisateur = utilisateur.id
-
-SELECT * FROM TABLE1,TABLE2
-WHERE TABLE1.id = TABLE2.id_fk
-
-SELECT * FROM TABLE1
-INNER JOIN TABLE2
-ON TABLEAU1.id = TABLE2.id_fk

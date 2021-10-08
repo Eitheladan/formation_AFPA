@@ -104,19 +104,26 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 
 <?php 
-          include("header.php"); 
+    if ($_SESSION['role']=="Admin"){
 
+          include("header_adm.php");
+
+        }else {
+
+            include("header_client.php");
+            
+        }
 ?>
 
 <?php
-// echo ("<div class='bienvenue'>Bonjour <span>".$_SESSION["prenom"]." ".$_SESSION["nom"]."<tr></span></br>
-//     Bienvenue sur mon site <br> Vous êtes un ".$_SESSION["role"]."<br>Votre numero de téléphone est le ".$_SESSION["tph"]." et votre numéro client est le ".$_SESSION["id"]."</div>");
+echo ("<div class='bienvenue'>Bonjour <span>".$_SESSION["prenom"]." ".$_SESSION["nom"]."<tr></span></br>
+    Bienvenue sur mon site <br> Vous êtes un ".$_SESSION["role"]."<br>et votre numéro client est le ".$_SESSION["id"]."</div>");
 
-// if(isset($_GET["admin"])){
+if(isset($_GET["admin"])){
 
-//     echo "<div class='admin'> Merci de bien vouloir passer par la console de gestion pour toutes modifications sur ce site !</div>";
+    echo "<div class='admin'> Merci de bien vouloir passer par la console de gestion pour toutes modifications sur ce site !</div>";
 
-// }
+}
 ?>
 
 

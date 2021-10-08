@@ -1,0 +1,6 @@
+1 rue possede 0 ou n immeuble
+1 immeuble est situé dans une rue
+1 immeuble possede 1 ou n étage
+1 étage apartient à 1 immeuble
+1 étage à 1 ou n appartement
+1 appartement est situé dans un étage

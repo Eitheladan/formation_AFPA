@@ -169,40 +169,16 @@ $_SESSION['LAST_ACTIVITY'] = time();
 
 <div class="bigbox">
     <h1 class="titre">ENREGISTREMENT</h1>
-    <form action="insert01.php" method="POST">
+    <form action="insert_client.php" method="POST">
         <div class="container">
-            <div class="form">Email: <br><input type="text" name="email"></div>
             <div class="form">Nom : <br><input type= "text" name="nom" id=""></div>
             <div class="form">Prénom : <br><input type= "text" name="prenom" id=""></div>
+            <div class="form">email : <br><input type= "text" name="email" id=""></div>
+            <div class="form">Entreprise : <br><input type= "text" name="entreprise" id=""></div>
             <div class="form">Mot de passe : <br><input type= "text" name="mdp" id=""></div>
-            <div class="form">
-                <label for="role">Rôle : </label><br>
-                <select id="role" name="role">
-                    <option value="Admin">Admin</option>
-                    <option value="Client">Client</option>
-                </select>
-            </div>
-            <div class="form" id="tph">Téléphone : <br><input type= "text" name="tph" id=""></div>  
+            <div class="btn"><br><input id="input_btn" type="submit" value="Envoyer"><div>            
         </div>  
-        <div class="container2">        
-            <div class="form" id="num">N° : <input id="input_num" type="text" name="numero"></div>
-            <div class="form" id="voie">
-                <label for="voie">Voie : </label>
-                <select id="voie" name="voie">
-                    <option value="Avenue">Avenue</option>
-                    <option value="Rue">Rue</option>
-                    <option value="Voie">Voie</option>
-                    <option value="Chemin">Chemin</option>
-                </select>
-            </div>
-            <div class="form" id="adresse">Adresse :<br><input type= "text" name="adresse1" id=""></div>
-            <div class="form" id="adresse2">Complément :<br><input type= "text" name="adresse2" id=""></div>
-            <div class="form" id="code_post">code postal : <br><input type= "text" name="code_post" id=""></div>
-            <div class="form" id ="ville">Ville : <br><input type= "text" name="ville" id=""></div>
-            
-            
-            <div class="btn"><br><input id="input_btn" type="submit" value="Envoyer"><div>
-        </div>
+        
     </form>
 </div>
 </body>

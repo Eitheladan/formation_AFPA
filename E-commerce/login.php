@@ -166,16 +166,13 @@ if(isset($_GET["miss"])){
 ?>
 
 <body>
-<?php 
-          include("header.php"); 
 
-?>
 
 
     <form class="form-3" action="bddtest.php" method="POST">
         <p class="clearfix">
-            <label for="login">Email</label>
-            <input type="text" name="mail" id="login" placeholder="Votre Email">
+            <label for="login">Login</label>
+            <input type="text" name="mail" id="login" placeholder="Votre email">
         </p>
         <p class="clearfix">
             <label for="password">Mot de passe</label>
