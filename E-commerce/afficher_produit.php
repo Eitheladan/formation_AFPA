@@ -67,7 +67,7 @@ $_SESSION['img']=$img;
 
 echo ("<form action='pannier.php' method='POST'><tr><td><img src='".$img."'></td><td><input id='text' name='r' readonly='readonly' type='text'value='".$ref."'></input></td>");
 echo ("<td><input id='text' type='text' readonly='readonly' name='l' value='".$nom."'></input></td>");
-echo ("<td><input id='text' type='prix' readonly='readonly' name='p' value='".$prix."'></input></td><td><input id='qte' type='text' name='q'></input></td><td><input id='input_btn' type='submit' name='action' value='Ajouter'></td></tr></form>");
+echo ("<td><input id='text' type='prix' readonly='readonly' name='p' value='".$prix."'></input></td><td><input id='qte' type='text' name='q'></input></td><td><input id='input_btn' href='' type='submit' name='action' value='Ajouter'></td></tr></form>");
 }
 ?>
 </table>

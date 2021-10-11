@@ -9,13 +9,19 @@ $ref = htmlspecialchars($_POST["ref"]);
 $nom = htmlspecialchars($_POST["nom"]);
 $prix = htmlspecialchars($_POST["prix"]);
 $img = basename($_FILES["fichier"]["name"]);
+$idpro=$_SESSION['id'];
 
+$sql4 = $bdd->prepare("UPDATE `produit` SET `ref_produit`=:ref, nom=:nom, prix_unitaire=:prix, img=:img  WHERE id_produit=:id;");
+$sql4->execute(array(
 
-$sql2 = $bdd->prepare ("INSERT INTO `produit` (`ref_produit`, `nom`, `prix_unitaire`, `img`) VALUES (?, ?, ?, ?);");
-$sql2->execute(array($ref,$nom,$prix,$img));
+    'ref'=>$ref,
+    'nom'=>$nom,
+    'prix'=>$prix,
+    'img'=>$img,
+    'id'=>$idpro,
 
-print_r($_FILES["fichier"]);
+));
 
-// header('Location:register_produit.php');
+ header('Location:maj_produit.php');
 
 ?>

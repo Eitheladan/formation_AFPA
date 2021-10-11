@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,26 +32,82 @@ font-weight: bold;
 color: red;
 }
 
-    </style>
-</head>
-<body>
+img {
 
-<?php
+width : 400px;
+height : auto; 
+}
 
-include("header_client.php");
-
-echo ("<div class='bienvenue'>Bonjour <span>".$_SESSION["prenom"]." ".$_SESSION["nom"]."<tr></span></br>
-    Bienvenue sur mon site <br> Vous êtes un ".$_SESSION["role"]."<br>et votre numéro client est le ".$_SESSION["id"]."</div>");
-
-if(isset($_GET["admin"])){
-
-    echo "<div class='admin'> Merci de bien vouloir passer par la console de gestion pour toutes modifications sur ce site !</div>";
+.home{
+    margin-top: 250px;
+    margin-left: 50px; 
 
 }
 
-include("afficher_produit.php");
 
+.wrap{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box{
+
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.description{
+
+    text-align: center;
+    font-size: 2em;
+    font-family: arial;
+}
+
+.produit_complet{
+
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+<?php
+include("header_client.php");
 ?>
+
+<div class="home">
+    <div class="row">
+        <div class="wrap">
+            <?php $products = $DB->query('SELECT * FROM produit'); ?>
+            <?php foreach ($products as $product): ?>
+
+            <div class="box">
+                <div class="produit_complet">
+                    <a href="#">
+                        <img src="<?= $product->img?>" alt="">
+                    </a>
+                    <div class="description">
+                        <?= $product->nom; ?>
+                        <a href="" class="prix"><?= number_format($product->prix_unitaire,2,',',' '); ?>€</a>
+                    </div>
+                    <a href="" class="gift">
+                        
+                    </a>
+                    
+                </div>
+            </div>
+
+            <?php endforeach ?>
+            
+            
+        </div>
+    </div>
+</div>
+
+
     
 </body>
 </html>

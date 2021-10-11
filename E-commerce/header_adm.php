@@ -27,12 +27,36 @@ $_SESSION['LAST_ACTIVITY'] = time();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/javascript.js@0.0.0/lib/index.min.js"></script>
 
-    <style>
+<style>
 
-      #navbar{
+#navbar{
         z-index: 1;
-      }
-    </style>
+}
+   
+
+html{
+    font-family: arial;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+}
+
+.bigbox{            
+    width: 60%;
+    margin-top : 150px;
+    margin-left : auto;
+    margin-right : auto;
+    background-color: white;
+    min-height: 700px;
+    padding: 30px 30px;
+}
+
+
+
+</style>
 
 </head>
 
@@ -56,6 +80,9 @@ $_SESSION['LAST_ACTIVITY'] = time();
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="register_produit.php">Nouveau Produit</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="maj_produit.php">MAJ Produit</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

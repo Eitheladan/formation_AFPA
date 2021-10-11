@@ -41,23 +41,16 @@ if(isset($_POST['valider'])){
             $_SESSION["tph"] = $tph;
 
             if ($role2=="Admin"){
-
                 header('Location:accueil.php?admin="admin"');
                 exit;
-
             }else{
-                header('Location:accueil.php');
+                header('Location:site_client.php');
                 exit;
             }
-
         }else{
-
-            header('Location:login.php?message="erreur"');
-            
-        }
-         
+            header('Location:login.php?message="erreur"');            
+        }         
     }else{
-
         header('Location:login.php?miss="erreur"');
     }
 }
