@@ -17,7 +17,7 @@ include("header_site_client.php");
           <h4 class="price"><?= number_format($product->prix_unitaire,2,',',' '); ?>€/g</h4>
         </div>
         <div class="card-body">
-          <a class="add addPanier" href="addpanier.php?id=<?= $product->id_produit; ?>" <p><i class="fas fa-shopping-cart"></i></p></a>
+          <a class="add" href="maj_produit_formulaire.php?id=<?= $product->id_produit; ?>" <p><i class="fas fa-pen"></i></p></a>
         </div>
       </div>
       <?php endforeach ?>      
