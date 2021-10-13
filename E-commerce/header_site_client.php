@@ -1,17 +1,18 @@
 <?php
 require '_header.php';
 
- if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+if(!isset($_SESSION['nom'])){
+  header('Location:login.php');
+}
+
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     // last request was more than 30 minutes ago
     session_unset() ;
     session_destroy();
     header('Location:login.php');
-
 }
 
 $_SESSION['LAST_ACTIVITY'] = time();
-
-// echo strftime("<div class='houre'> %A - %H:%M:%S </div>",time());
 
 ?>
 <!DOCTYPE html>

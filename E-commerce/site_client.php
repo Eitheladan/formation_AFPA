@@ -9,17 +9,20 @@ include("header_site_client.php");
     <div class="cards">
       <?php $products = $DB->query('SELECT * FROM produit'); ?>
         <?php foreach ($products as $product): ?>
-      
+      <form action="addpanier.php" method="POST">
       <div class="card">
         <img src="image/<?= $product->img ?>">
         <div class="card-header">
-          <h4 class="title"><?= $product->nom ?></h4>
-          <h4 class="price"><?= number_format($product->prix_unitaire,2,',',' '); ?>€/g</h4>
+        <h4 class="title"><input class="nom" type="text" value="<?= $product->nom ?>" name="nom"></input></h4>
+        <h4 class="price"><input class="prix" type="text" value="<?= $product->prix_unitaire ?>" name="prix">€/g</input></h4>
         </div>
         <div class="card-body">
-          <a class="add" href="addpanier.php?id=<?= $product->id_produit; ?>" <p><i class="fas fa-shopping-cart"></i></p></a>
+        <h4 class="title">Quantité : <input class="prix" type="text" value="1" name="qte"></input></h4>
+        <a class="add" type="submite" href="addpanier.php?id=<?= $product->id_produit; ?>"> <input type="submit" value="Ajouter"></a>
         </div>
       </div>
+      </form>
+        
       <?php endforeach ?>      
     </div>
     <!-- Fin de toutes les cartes -->
