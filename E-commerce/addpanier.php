@@ -14,6 +14,7 @@
 
 // ?>-->
 <?php
+<<<<<<< HEAD
 session_start();
 
 // ouverture de la bdd
@@ -41,5 +42,23 @@ $sql->execute(array($nom,$qte,$prix,$total,$id));
 // header('Location:site_client.php');
 
 
+=======
+require '_header.php';
+$json = array('error' => true);
+if(isset($_GET['id'])){
+    $product = $DB->query('SELECT id_produit FROM produit WHERE id_produit=:id', array('id'=>$_GET['id']));
+    if(empty($product)){
+        $json['message'] = "Ce produit n'existe pas";
+    }
+    $panier->add($product[0]->id_produit);
+    $json["error"] = false;  
+    $json["total"] = $panier->total();
+    $json["count"] = $panier->count();
+    $json['message'] = 'le produit a bien été ajouté à votre panier';
+}else{
+    $json["message"] = "Vous n'avez pas sélectionné de produit";
+}
+echo json_encode($json);
+>>>>>>> 5bd688e4c47b4d768875923067b436545210c106
 
 ?>

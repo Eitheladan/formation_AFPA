@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/
+jquery.min.js"></script>
+</head>
+<body>
+<form id="foo">
+ <label for="bar">A bar</label>
+ <input id="bar" name="bar" type="text" value="" />
+ <input type="submit" value="Send" />
+</form>
+<script>
+ var request;
+ $("#foo").submit(function(event) {
+ event.preventDefault();
+ var $form = $(this);
+ // recupère tous les inputs
+ var $inputs = $form.find("input, select, button, textarea");
+ // transforme en texte
+ var serializedData = $form.serialize();
+ // post les données texte à un php
+ request = $.post({
+ url: "jquerypost.php",
+ data: serializedData
+ });
+ });
+ </script>
+</body>
+</html>

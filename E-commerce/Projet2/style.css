@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh
+}
+/* Barre de navigation */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+nav h1{
+  font-size: 30px;
+}
+nav .onglets{
+  display: flex;
+  flex-wrap:wrap;
+}
+nav .onglets p{
+  font-size: 17px;
+  margin-right: 10px;
+  cursor:pointer;
+}
+nav .onglets input{
+  margin: 8px 20px;
+  padding: 15px;
+  border-radius: 30px;
+  border:none;
+  background-color: #f2f2f2;
+  outline:none;
+}
+
+
+/* Fin de la barre de navigation */
+
+/* box user */
+
+.box-user{  
+  width: 250px;
+  height: 150px;  
+  position : absolute;
+  top: 100px;
+  right: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Header */
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+header h1{
+  font-size: 50px;
+  max-width: 600px;
+  text-align:center;
+}
+header button{
+  padding: 15px 20px;
+  font-size: 20px;
+  border:none;
+  border-radius: 5px;
+  outline:none;
+  cursor:pointer;
+}
+/* Fin du header */
+
+/* Section principale */
+
+.main{
+  margin: 20px;
+  margin-top: 100px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position: relative;
+  flex: 1;
+}
+/* Toutes les cartes */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  font-size: 1.5em;
+}
+.price {
+  font-size: 1.2rem;
+}
+.title{
+  font-size: 1.2rem;
+}
+.cards .card{
+  margin-right: 20px;
+  cursor:pointer;
+}
+.cards .card img{
+  width: 350px;
+}
+.cards .card .card-header{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.cards .card .card-body p{
+  margin-top: -10px;
+}
+/* Fin de toutes les cartes */
+
+/* Video de présentation */
+.main .video{
+  margin-top: 80px;
+  width: 90%;
+}
+.main .video iframe{
+  border:none;
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+}
+
+#idpanier{
+  background-color: #e3f2fd;
+  width: 150px;
+  text-align: center;
+  margin: 0;
+  
+}
+/* Fin de la vidéo de présentation */
+/* Fin de la section principale */
+
+/* Pied de page */
+/* footer {
+  margin-top: 100px;
+  background-color: #000;
+  padding: 30px;
+  color: #fff;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer .social-media{
+  display: flex;
+}
+footer .social-media p{
+  margin-right: 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 1px;
+  text-align:center;
+  width: 20px;
+  cursor:pointer;
+} */
+/* Fin du pied de page */
+
+@media screen and (max-width: 640px){
+  nav .onglets .link, nav h1{
+    display:none;
+  }
+  .cards .card img{
+    width: 300px;
+  }
+}
+
+/* pannier début */
+
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+    background-color: antiquewhite;
+    width: 650px;
+    margin : 250px auto 0 auto;
+    text-align: center;
+}
+
+thead{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.rowPanier{
+  border: 1px solid rgb(200, 200, 200);
+  text-align: center;
+  
+}
+td{
+  width : 20%;
+  height: 60px;
+  padding: 5px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+input{
+
+  background-color : transparent;
+  border-style : none;
+  border : 0;
+  border-style : none;
+  border-width : 0px;
+  border-color : inherit;
+  font-size : initial;
+  text-align: center;
+}
+
+input:focus {
+  outline:  none;
+}
+

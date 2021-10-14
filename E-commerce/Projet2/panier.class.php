@@ -49,6 +49,8 @@ class panier {
         unset($_SESSION['panier'][$product_id]);
     }
 
+    
+
 
 
 
