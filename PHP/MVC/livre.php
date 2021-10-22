@@ -15,4 +15,7 @@ echo "<pre>";
 print_r($livre1);
 echo "</pre>";
 
+echo $livre1->getAuteur()[0]->afficheAuteur();
+
+
 ?>

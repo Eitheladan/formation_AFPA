@@ -1,36 +1,13 @@
 <?php
 class Lecteurk7{
 
-private $play;
-private $stop;
 private $forward;
 private $reward;
-private $eject;
 private $k7;
 
+public function __construct($k7){
 
-// public function getPlay(){
-//     return $this->play;
-// }
-
-// public function setPlay(){
-//     $this->play=$play ;
-// }
-
-// public function getStop(){
-//     return $this->stop;
-// }
-
-// public function setStop(){
-//     $this->stop=$stop ;
-// }
-
-public function getForward(){
-    return $this->forward;
-}
-
-public function setForward(){
-    $this->forward=10 ;
+    $this->k7 = $k7;
 }
 
 public function getK7(){
@@ -39,6 +16,14 @@ public function getK7(){
 
 public function setK7(){
     $this->k7=$k7 ;
+}
+
+public function getForward(){
+    return $this->forward;
+}
+
+public function setForward(){
+    $this->forward=10 ;
 }
 
 public function getReward(){
@@ -68,6 +53,7 @@ public function Forward(){
 public function Eject(){
     return ("Eject");
 }
+
 }
 
 ?>

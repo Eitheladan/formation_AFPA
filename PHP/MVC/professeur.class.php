@@ -7,10 +7,6 @@ class Professeur {
     private $email;
     private $specialite;
 
-
-
-//constructeur
-
 public function __construct($id, $nom, $prenom, $email, $specialite) {
 
     $this->id = $id ;
@@ -27,7 +23,7 @@ public function getId(){
     return $this->id ;
 }
 
-public function setId(){
+public function setId($id){
 
     $this->id = $id ;
 }
@@ -37,7 +33,7 @@ public function getNom(){
     return $this->nom ;
 }
 
-public function setNom(){
+public function setNom($nom){
 
     $this->nom = $nom ;
 }
@@ -47,7 +43,7 @@ public function getPrenom(){
     return $this->prenom ;
 }
 
-public function setPrenom(){
+public function setPrenom($prenom){
 
     $this->prenom = $prenom ;
 }
@@ -57,7 +53,7 @@ public function getEmail(){
     return $this->email ;
 }
 
-public function setEmail(){
+public function setEmail($email){
 
     $this->email = $email ;
 }
@@ -67,7 +63,7 @@ public function getSpecialite(){
     return $this->specialite ;
 }
 
-public function setSpecialite(){
+public function setSpecialite($specialite){
 
     $this->specialite = $specialite ;
 }

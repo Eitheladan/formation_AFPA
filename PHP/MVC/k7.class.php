@@ -25,7 +25,7 @@ class K7audio{
     }
 
     public function setTitre_album(){
-        $this->Titre_album = $titre_album;
+        $this->titre_album = $titre_album;
     }
 
     public function getDurée(){
@@ -34,6 +34,11 @@ class K7audio{
 
     public function setDurée(){
         $this->titre_album = $durée;
+    }
+
+    public function Affiche(){
+
+        return $this->nom_groupe." - ".$this->titre_album." - ".$this->durée." ";
     }
 
 }

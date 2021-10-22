@@ -21,6 +21,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="stylesheet" href="neige.css">
         <title>Fragrances</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -75,4 +76,6 @@ $_SESSION['LAST_ACTIVITY'] = time();
                     <p class="lead fw-normal text-white-50 mb-0">La folies des senteurs</p>
                 </div>
             </div>
+
+            
         </header>
