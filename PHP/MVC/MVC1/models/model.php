@@ -7,7 +7,7 @@ function connexionBDD(){
     $password = "";
     
         try{
-            $bddPDO = new PDO('mysql:host='.$host.';dbname='.$db_name.'', $username, $password);
+            $bddPDO = new PDO('mysql:host='.$host.';dbname='.$db_name.';charset=UTF8', $username, $password);
             $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $bddPDO;
         }catch(PDOException $exception){

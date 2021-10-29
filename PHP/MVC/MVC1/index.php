@@ -1,32 +1,61 @@
 <?php
+define("_BASE","/MVC1");
+// repertoire racine
+// .htaccess
+// index.php
 
-if ($_GET['action']) {
+// -> controllers
+//        controllerEtudiant.php 
+// -> models
+//        models.php (on aura la connection à la BDD)
+//        modelEtudiant.php 
+// -> views
+//        
 
-    $params = explode("/", $_GET['action']);
 
-    // print_r($params);
+if($_GET['action']) {
 
+$params = explode("/", $_GET['action']);
 
-    if($params[0]!= ""){
+// je récupere le contenu du paramètres action qui possède au minimum
+// 1) le nom d'un controller 
+// 2) le nom d'une fonction qui va s'appliquer sur le contrôleur
+// http://localhost/mvc1/controller/action
+// echo $params[0]; // c'est le controller
+// echo $params[1]; // c l'action 
+// controller sera le nom d'un controller qui sera chargé
+// et action sera la fonction à executer sue ce controller. 
+//
+// exemple pour une action sans paramètres -> http://localhost/mvc1/controllerEtudiant/test
+// exemple pour une action avec 1 paramètre -> http://localhost/mvc1/controllerEtudiant/cree/12
 
-        $controller = $params[0];
-        $action = "";
+if($params[0] !=  "") {
 
-        if(isset($params[1])){ $action = $params[1];}
+    $controller = $params[0];
+//    $controller vaudra la chaine de caractère "controllerEtudiant"
 
-        require_once ('controllers/'.$controller.'.php');
+    $action = "";
 
-        if(function_exists($action)){
-            if(isset($params[2])){
+    if(isset($params[1])) { $action = $params[1]; }
+    // $action vaudra pour cet exemple la chaine de caractère "test"
+
+    require_once('controllers/'.$controller.'.php');
+    // require va charger le controller 'controllerEtudiant.php" qui se trouve dans le répertoire controllers 
+    // c'est comme si on avait tapé 
+    // require_pnce('controllers/controllerEtudiant.php') ;
+    if( function_exists($action)) {
+        // pour cet exemple si la fonction test() existe dans le controller controllerEtudiant
+        // elle execute la fonction test()
+        if (isset($params[2])) {
                 $action($params[2]);
-            }else{
-            $action();
-            }
-        }else{
-            echo "Fonction n'existe pas";
+        
+        } else {
+                $action();
         }
+    } else {
+        
+        echo "Fonction n'existe pas";
     }
+ }
 }
-
-
 ?>
