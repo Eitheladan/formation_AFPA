@@ -160,9 +160,6 @@ if(isset($_GET["miss"])){
     echo "<div class='erreur'> Veuillez remplir tous les champs ...</div>";
     
     }
-
-
-
 ?>
 
 <body>
