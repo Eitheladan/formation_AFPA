@@ -24,6 +24,7 @@ function delProduit()
 function afficheValidePanier()
 {
     validePanier();
-    header("location:"._BASE."/controllerPanier/affichePanier");
+    unset($_SESSION['id_commande']);    
+    header("location:"._BASE."/controllerUser/afficheAccueilClient");
 }
 ?>

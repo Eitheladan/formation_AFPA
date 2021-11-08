@@ -18,15 +18,16 @@ function formAjoutUser()
 
 function ajouterUnUser()
 {
-    $prenom = stripslashes(trim(htmlspecialchars($_POST['prenom'])));
-    $nom = stripslashes(trim(htmlspecialchars($_POST['nom'])));
-    $mail = stripslashes(trim(htmlspecialchars($_POST['mail'])));
-    $password = stripslashes(trim(htmlspecialchars($_POST['password'])));
+    $prenom = secure_input(ucwords($_POST['prenom']));
+    $nom = secure_input(strtoupper($_POST['nom']));
+    $mail = secure_input($_POST['mail']);    
+    $genre = secure_input($_POST['genre']);
+    $password = secure_input($_POST['password']);
     $hash = password_hash($password,PASSWORD_DEFAULT);
     
 
-    enregistreUser($prenom, $nom, $mail, $hash);
-    header('location:'._BASE.'/controllerLogin/afficheLogin');
+    enregistreUser($prenom, $nom, $mail, $hash, $genre);
+    header('location:'._BASE.'/controllerUser/afficheAccueilClient');
 }
 
 function afficheAllUsers(){
@@ -48,9 +49,14 @@ function rqpMajUser()
     $nom = $_POST['nom'];
     $mail = $_POST['mail'];
     $password = $_POST['password'];
+    if($password!=''){
     $hash = password_hash($password,PASSWORD_DEFAULT);
+    }else{
+    $hash=FALSE;
+    }
+    var_dump($hash);
     $role = $_POST['role'];
-    majUser($prenom, $nom, $mail, $hash, $role, $id2);
+    majUser( $nom, $prenom, $mail, $hash, $role, $id2);
     header('location:'._BASE.'/controllerUser/afficheAllUsers' );
 }
 

@@ -20,6 +20,7 @@ $id=$row['id_user'];
 $mdp=$row['password'];
 $nom=$row['nom'];
 $prenom=$row['prenom'];
+$genre=$row['genre'];
 $role2=$row['id_role'];
 
 
@@ -35,6 +36,7 @@ $verif=password_verify($rqp_mdp,$mdp);
             $_SESSION["id"] = $id;
             $_SESSION["nom"] = $nom;
             $_SESSION["prenom"] = $prenom;
+            $_SESSION['genre'] = $genre;
             $_SESSION["role"] = $role2;
            
             if ($role2=="1"){

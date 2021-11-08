@@ -179,7 +179,12 @@ background:#ddd;
     <!-- Cart -->
     <div class="col-lg-9 col-md-9 col-sm-12">
         <div class="col-lg-12 col-sm-12">
-            <span class="title">PANIER</span>
+            <?php
+            foreach($req as $element){
+                $date=$element['date'];
+            }
+            ?>
+            <span class="title">Commande du <?=date('d-m-Y', strtotime($date))?></span>
         </div>
         <div class="col-lg-12 col-sm-12 hero-feature">
             <div class="table-responsive">
@@ -192,15 +197,16 @@ background:#ddd;
                             <td>Prix HT</td>
                             <td>Prix TTC</td>
                             <td>Sous Total</td>
-                            <td>Suppr.</td>
+                            
                         </tr>
                     </thead>
                     <tbody>
 
                     <?php
                         $total = 0;
-                        foreach ($rqp as $row) {
+                        foreach ($req as $row) {
 							
+							$quantite= $row['quantite'];
                             $prixTTC = $row['prix']*$row['taux'];
 							$total =  round($total + ($prixTTC*$row['quantite']),2);
 							
@@ -212,19 +218,10 @@ background:#ddd;
                                 </a>
                             </td>
                             <td><?= $row['nom'] ?></td>
-                            <td><?= $row['quantite'] ?></td>
+                            <td><?= $quantite ?></td>
                             <td class="price"><?= round($row['prix'],2) ?></td>
                             <td class="price"><?= round($prixTTC,2) ?></td>
-                            <td><?= round(($prixTTC)*($row['quantite']),2) ?></td>
-                            <td class="text-center">
-                                <form action="<?=_BASE?>/controllerPanier/delProduit" method="post">
-                                    <input type="hidden" name="id_produit" value="<?=$row['id_produit']?>">
-                                    <input type="submit" value="supprimer">
-                                <a type="submite" class="remove_cart" rel="2">
-                                    <i class="fa fa-trash-o"></i>
-                                </a>
-                                </form>
-                            </td>
+                            <td><?= round(($prixTTC)*($quantite),2) ?></td>                            
                         </tr>
                         <?php }	?>
                         
@@ -237,12 +234,9 @@ background:#ddd;
                     </tbody>
                 </table>
             </div>
-            <div class="btn-group btns-cart">
-                <a href="<?=_BASE?>/controllerUser/afficheAccueilClient"><button type="button" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Continuer Achat</button></a>
-                <button type="button" class="btn btn-primary">MAJ Panier</button>
-                <a href="<?=_BASE?>/controllerPanier/afficheValidePanier"><button type="button" class="btn btn-primary">Valider Panier <i class="fa fa-arrow-circle-right"></i></button></a>
+			<div class="btn-group btns-cart">
+                <a href="#"><button type="button" class="btn btn-primary"><i class="far fa-file-pdf"></i> Imprimer en PDF</button></a>
             </div>
-
         </div>
     </div>
     <!-- End Cart -->

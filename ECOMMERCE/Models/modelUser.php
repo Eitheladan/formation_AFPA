@@ -1,15 +1,16 @@
 <?php
 require_once ('Models/Model.php');
 
-function enregistreUser( $prenom, $nom, $mail, $hash)
+function enregistreUser($prenom, $nom, $mail, $hash, $genre)
 {
     $bddPDO = connexionBDD();
-    $requete = $bddPDO->prepare('INSERT INTO users(nom, prenom, mail, password) 
-        VALUES (:nom, :prenom, :mail, :password)');
+    $requete = $bddPDO->prepare('INSERT INTO users(nom, prenom, mail, genre, password) 
+        VALUES (:nom, :prenom, :mail, :genre, :password)');
 
     $requete->bindvalue(':nom', $nom);
     $requete->bindvalue(':prenom', $prenom);
     $requete->bindvalue(':mail', $mail);
+    $requete->bindvalue(':genre', $genre);
     $requete->bindvalue(':password', $hash);
     
     $resultAddUser = $requete->execute();
@@ -39,15 +40,21 @@ function selectUnUser($id)
 function majUser($nom, $prenom, $mail, $hash, $role, $id2)
 {
     $bddPDO = connexionBDD();
-    $requete = $bddPDO->prepare("UPDATE `users` SET nom=:nom, prenom=:prenom, mail=:mail, password=:password, id_role=:role WHERE id_user=:id;");
+    $requete = $bddPDO->prepare("UPDATE `users` SET nom=:nom, prenom=:prenom, mail=:mail, id_role=:role WHERE id_user=:id;");
     $requete->execute(array(
         'nom'=>$nom,
         'prenom'=>$prenom,
-        'mail'=>$mail,
-        'password'=>$hash,
+        'mail'=>$mail,        
         'role'=>$role,
         'id'=>$id2
-    ));    
+    ));
+    if($hash!=false){
+    $requete2 = $bddPDO->prepare("UPDATE users SET password=:password WHERE id_user=:id");
+    $requete2->execute(array(
+        ':password'=>$hash,
+        ':id'=>$id2
+    ));
+    }
 }
 
 // suppression d'un etudiant

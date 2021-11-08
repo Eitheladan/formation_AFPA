@@ -24,9 +24,19 @@ function enregistreProduit($type, $nom, $prix, $quantite, $id_tva)
 function selectAllProduit()
 {
     $bddPDO = connexionBDD();
-
     $rqp_prod=$bddPDO->prepare("SELECT * FROM produit");
     $rqp_prod->execute(array());
+    $case = $rqp_prod->fetchAll();
+    return $case;
+}
+
+function selectAllProduitsParType($type)
+{
+    $bddPDO = connexionBDD();
+    $rqp_prod=$bddPDO->prepare("SELECT * FROM produit WHERE id_type=:id_type");
+    $rqp_prod->execute(array(
+        ':id_type'=>$type
+    ));
     $case = $rqp_prod->fetchAll();
     return $case;
 }

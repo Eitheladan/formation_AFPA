@@ -38,7 +38,7 @@
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                     <?php if(isset($_SESSION['nom'])){
                                         if($row['quantite']>0){ ?>
-                                        <div class="text-center"><input class="btn btn-outline-dark mt-auto" type="submit" value="Ajout Panier" name="submit"></div>
+                                        <div class="text-center"><input class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#popup<?=$row['id_produit']?>" type="submit" value="Ajout Panier" name="submit"></div>
                                     <?php }else{ ?>
                                         <center><div style='color: red; font-weight:bolder;'>Plus de stock</div></center>
                                         <?php }
@@ -47,6 +47,24 @@
                                 </div>
                             </div>
                             </form>
+                            <!-- Pop-up de validation ajout produit panier -->
+                            <div id="popup<?=$row['id_produit']?>" class="modal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 style="color: green;"><i class="fas fa-check"></i>Le produit a bien été ajouté à votre panier</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img class="card-img-top" style="width:125px; height:125px;" src="<?=_BASE?>/views/image/<?= $row['image'] ?>.jpg" alt="..." />
+                                            <h5 class="fw-bolder"><?= $row['nom'] ?></h5>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuer mes achats</button>
+                                            <a href="<?=_BASE?>/controllerPanier/affichePanier"><button type="button" class="btn btn-secondary" >Accéder à mon panier</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php } ?>                        
                     
                 </div>

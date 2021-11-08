@@ -1,7 +1,7 @@
 <?php include('_headerAdmin.php')  ?>
 
     <center>
-    <h2>Affiche les étudiants</h2>
+    <h2>Affiche les clients</h2>
         <table class="table table-primary table-striped table-over table-sm" style="width: 1000px;">
             <thead>
                 <tr>

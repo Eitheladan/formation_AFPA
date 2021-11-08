@@ -13,6 +13,10 @@ return $row;
 
 function logout()
 {   
+    $bddPDO=connexionBDD();
+    $id=$_SESSION['id_commande'];
+    $del=$bddPDO->prepare("DELETE FROM contient WHERE id_commande=$id");
+    $del->execute();
     session_start();
     session_unset() ;
     session_destroy();

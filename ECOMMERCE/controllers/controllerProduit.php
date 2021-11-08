@@ -40,10 +40,14 @@ function afficheAllMaquillage(){
     $rqp = selectAllMaquillage();
     require_once('views/viewProduitMaquillage.php');
 }
-function afficheModifProduit($id)
-{
+function afficheModifProduit($id){
     $rqp = selectUnProduit($id);
     require_once('views/viewFormModifProduit.php');
+}
+
+function afficheAllProduitsParType($type){
+    $rqp = selectAllProduitsParType($type);
+    require_once('views/viewAllproduitsParType.php');
 }
 
 function rqpMajProduit($id_produit)
@@ -54,10 +58,7 @@ function rqpMajProduit($id_produit)
     $quantite = $_POST['quantite'];
     $id_tva = $_POST['id_tva'];
 
-    var_dump($id_produit); 
-   
-
     majProduit($id_produit, $type, $nom, $prix, $quantite, $id_tva);
-    // header('location:'._BASE.'/controllerProduit/afficheAllProduit');
+    header('location:'._BASE.'/controllerProduit/afficheAllProduit');
 }
 ?>

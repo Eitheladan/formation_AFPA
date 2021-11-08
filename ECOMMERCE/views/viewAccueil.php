@@ -1,9 +1,5 @@
 <?php include('_header.php'); ?>
-<style>
-   body{
-      background-color: black;
-   }
-</style>
+
 <div id="myCarousel" class="carousel slide border" data-ride="carousel">
    <div class="carousel-inner">
       <div class="carousel-item active">
@@ -41,5 +37,6 @@
    <span class="sr-only">Next</span>
    </a>
 </div>
+
 
 <?php include('_footer.php'); ?>

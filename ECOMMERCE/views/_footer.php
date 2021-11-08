@@ -1,7 +1,7 @@
-<!-- Footer-->
 </body>
+<!-- Footer-->
 <footer class="py-4 bg-dark fixed-bottom">
-  <div class="container"><p class="m-0 text-center text-white">Copyright &copy; LesSenteursDuDésire.com</p></div>
+  <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Chogan.fr</p></div>
 </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -11,8 +11,10 @@
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+
 <script>
-    if (!isset($_SESSION['nom'])){
+  //fonction qui affiche le popup login
+if (!isset($_SESSION['nom'])){
     $(document).ready(function() {             
 $('#loginModal').modal('show');
   $(function () {

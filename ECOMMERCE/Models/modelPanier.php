@@ -88,6 +88,11 @@ while ($row=$rqe->fetch()){
 
     $del=$bddPDO->prepare("DELETE FROM contient WHERE $id=$id_client");
     $del->execute();
+
+    session_unset($_SESSION['id_commande']);
+    session_destroy($_SESSION['id_commande']);
+
+
 }
 
 

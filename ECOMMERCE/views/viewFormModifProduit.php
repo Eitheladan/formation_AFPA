@@ -15,10 +15,7 @@
         var_dump($element['id_produit']);
         ?>
 
-<center><h2>Modif produit</h2></center>
-
-
-    
+<center><h2>Modif produit</h2></center>    
     <center>
         <table class="table table-primary table-striped table-over table-sm" style="width: 500px">
         <form action="<?=_BASE?>/controllerProduit/rqpMajProduit/<?=$id_produit?>" method='post'>
