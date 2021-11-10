@@ -29,5 +29,16 @@
         <?php } ?>
         </table>       
     </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <?php include('_footerAdmin.php') ?>
+
+
+    <div style="margin-bottom: 50px;"></div>
+
+    <?php include('_footer.php') ?>

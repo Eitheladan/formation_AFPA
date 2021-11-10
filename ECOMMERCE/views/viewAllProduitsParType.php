@@ -8,6 +8,13 @@ if(isset($_GET["message"])){
 
 ?>
 
+<style>
+
+body{
+    background-color: white;
+    }
+</style>
+
         <!-- Section-->
         <section class="py-5">
         
@@ -24,7 +31,7 @@ if(isset($_GET["message"])){
                             <div class="col mb-5" style="width: 260px; height: 500px">
                                 <div class="card h-100" style="width: 260px; height: 500px">                            
                                     <!-- Product image-->
-                                    <a  data-toggle="modal" data-target="#details<?=$row['id_produit']?>" href="#"><img class="card-img-top" style="width:250px; height:250px;" src="<?=_BASE?>/views/image/<?= $row['image'] ?>.jpg" alt="..." /></a>
+                                    <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<?=$row['id_produit']?>" aria-controls="offcanvasRight" href="#"><img class="card-img-top" style="width:250px; height:250px;" src="<?=_BASE?>/views/image/<?= $row['image'] ?>.jpg" alt="..." /></a>
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -91,7 +98,7 @@ if(isset($_GET["message"])){
                             </form>
                             <!-- Pop-up consultation produit -->
                             <div slyle="width: 100%;" id ="details<?=$row['id_produit']?>" class="modal fade" aria-hidden="true">
-                                <div  class="modal-dialog modal-fullscreen">
+                                <div  class="modal-dialog modal-xxl" style="width: 100%;">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5><?=$row['nom']?></h5>
@@ -112,9 +119,18 @@ if(isset($_GET["message"])){
                                     </div>
                                 </div>                        
                             </div>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<?=$row['id_produit']?>" aria-labelledby="offcanvasRightLabel">
+                                            <div class="offcanvas-header">
+                                            <h5><?=$row['nom']?></h5>
+                                                
+                                            </div>
+                                            <div class="offcanvas-body">
+                                                ...
+                                            </div>
+                                            </div>
 
                             <!-- Pop-up de validation ajout produit panier -->
-                            <div id="popup<?=$row['id_produit']?>" class="modal">
+                            <div id="popup<?=$row['id_produit']?>" class="modal fade">
                                 <div class="modal-dialog modal-sm modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
