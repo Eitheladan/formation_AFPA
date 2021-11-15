@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Add Movie{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+
+div {
+    margin-top : 15px;
+}
+
+</style>
+<center>
+<h2> Ajout Film </h2>
+
+<form action="addMovie" method="POST">
+    <div>
+        <input type="text" name="title" placeholder="Titre du film"><br>
+    </div>
+    <div>
+        <textarea rows="10" cols="50" name="description" placeholder="Description du film"></textarea>
+    </div>
+    <div>
+        <label for="time">Durée : </label><br>
+        <input type="text" name="duration"><br>
+    </div>
+    <div>
+        <label for="date">Date : </label><br>
+        <input type="date" name="date"><br>
+    </div>
+    <div>
+        <label for="affiche">Affiche : </label><br>
+        <input type="text" name="cover_image"><br>
+    </div>
+    <div>
+        <label for="genre">Genre : </label><br>
+        <select name="id_genre">
+            {% for genre in genres %}
+            <option value="{{genre.id}}">{{ genre.nom }} - {{genre.id}}</option> 
+            {% endfor %}
+        </select><br>
+    </div>
+    <div>
+        <label>Directeur : </label><br>
+        <select name="id_director">
+            {% for director in directors %}
+            <option value="{{director.id}}">{{ director.nom }}-{{ director.prenom }} - {{director.id}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button type="submit">Envoyer</button>
+    </div>
+</form>
+</center>
+
+
+
+
+
+
+
+{% endblock %}

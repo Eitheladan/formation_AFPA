@@ -19,6 +19,12 @@ class DirectorService
         return $directors;
     }
 
+    public function create($directorData)
+    {                
+        $director = $this->directorDao->createObjectFromFields($directorData);
+        $this->directorDao->insert($director);
+    }
+
   
 
     // public function getById($id)

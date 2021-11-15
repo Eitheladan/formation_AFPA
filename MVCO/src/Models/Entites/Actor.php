@@ -12,7 +12,7 @@ class Actor{
         return $this;
     }
 
-    public function setid($id){
+    public function setId($id=null){
         $this->id = $id;
         return $this;
     }
@@ -34,11 +34,9 @@ class Actor{
         return $this->id;
     }
 
-    public function addActor(){
-        return $this->id;
-        return $this->nom;
-        return $this->prenom;
-    }
+    // public function addActor(){
+    //     return $this->getNom()->getPrenom();        
+    // }
 }
 
 ?>

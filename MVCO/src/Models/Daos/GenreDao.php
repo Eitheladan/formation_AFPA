@@ -21,20 +21,14 @@ class GenreDao extends BaseDao
         }else{
             throw new \PDOException($stmt->errorInfo()[2]);
         }
-    }
+    }    
 
-    public function findById($id)
+    public function findByMovie($id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM genre WHERE id = $id");
+        $stmt = $this->db->prepare("SELECT * FROM genre, movie WHERE genre.id = movie.genre_id AND movie.id = $id");
         $res = $stmt->execute();
-        
-        if ($res){
-            $genre = [];
-            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC))
-            {
-                $genre[] = $this->createObjectFromFields($row);
-            }
-            return $genre;
+        if ($res){            
+            return $stmt->fetchObject(Genre::class);            
         }else{
             throw new \PDOException($stmt->errorInfo()[2]);
         }
@@ -44,16 +38,15 @@ class GenreDao extends BaseDao
     {
         $genre = new Genre ();
         $genre->setId($fields['id'])->setNom($fields['name']);
-
         return $genre;
     }
-    
 
-    public function findByMovie($id)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM genre, movie WHERE genre.id = movie.genre_id AND movie.id = $id");
-        $res = $stmt->execute();
-
-        return $res;
+    public function insert($genre)
+    {           
+        $rqp=$genre->getNom();
+        $sql=$this->db->prepare("INSERT INTO genre (name) VALUES (?)");
+        $sql->execute(array($rqp));    
     }
+        
+    
 }

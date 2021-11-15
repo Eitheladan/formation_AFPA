@@ -18,7 +18,7 @@ class MovieService
 
     public function __construct()
     {
-    $this->movieDao = new MovieDao();
+    $this->movieDao  = new MovieDao();
     $this->genreDao = new GenreDao();
     $this->directorDao = new DirectorDao();
     $this->actorDao = new ActorDao();
@@ -26,28 +26,45 @@ class MovieService
 
     public function getAllMovies()
     {
+        var_dump($this->movieDao);
         $movies = $this->movieDao->findAll();
         return $movies;
     }
-    
+
+    public function create($movieData)
+    {        
+        $movie= $this->movieDao->createObjectFromFields($movieData);        
+        $this->movieDao->insert($movie);
+        
+    }
+
     public function getById($id)
     {
-        $movie = $this->movieDao->findById($id);        
+        $movie = $this->movieDao->findById($id);                  
         $actors = $this->actorDao->findByMovie($id);
+        // montreMoi($movie);
+        // montreMoi($actors);
 
         foreach ($actors as $actor)
         {
-            $movie->addActor($actor['nom']);
-            var_dump($movie);
+            $movie->addActor($actor);
         }
 
-        $genre = $this->genreDao->findByMovie($id);
-
         $director = $this->directorDao->findByMovie($id);
+        // montreMoi($director);
+
         $movie->setDirector($director);
 
-        return $movie;
+        $genre = $this->genreDao->findByMovie($id);
+        // montreMoi($genre);
+
+        $movie->setGenre($genre);
+        // montreMoi($movie);
+
+        return $movie;       
     }
 }
+    
+
 
 ?>

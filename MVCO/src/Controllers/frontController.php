@@ -2,7 +2,7 @@
 
 namespace cinema\controllers;
 
-use cinema\Models\Daos\ActorDao;
+
 use cinema\Models\Services\GenreService;
 use cinema\Models\Services\ActorService;
 use cinema\Models\Services\DirectorService;
@@ -60,15 +60,34 @@ class FrontController {
     public function movies(){
         
         $movies = $this->movieService->getAllMovies();
-        // montreMoi($directors);    
+        // montreMoi($movies);   
         echo $this->twig->render('movies.html.twig', [ "movies" => $movies ] );
 
     }
 
     public function movie($id)
     {
-        $movies = $this->movieService->getById($id);
-        echo $this->twig->render('movies.html.twig', [ "movies" => $movies ] );
+        $movie = $this->movieService->getById($id);       
+        // montreMoi($movie);
+        
+        echo $this->twig->render('movie.html.twig', [ "movie" => $movie] );
+    }
+
+    public function addgenre()
+    {        
+        echo $this->twig->render('addgenre.html.twig');
+    }
+
+    public function addDirector()
+    {        
+        echo $this->twig->render('addDirector.html.twig');
+    }
+
+    public function addMovie()
+    {
+        $genres = $this->genreService->getAllgenres();
+        $directors = $this->directorService->getAllDirectors();        
+        echo $this->twig->render('addmovie.html.twig', [ "directors" => $directors,  "genres" => $genres]);
     }
 
     

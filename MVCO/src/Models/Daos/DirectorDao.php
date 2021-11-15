@@ -21,22 +21,35 @@ class DirectorDao extends BaseDao
         }else{
             throw new \PDOException($stmt->errorInfo()[2]);
         }
+    }   
+
+    public function findByMovie($id){
+
+        $stmt = $this->db->prepare("SELECT * FROM director, movie WHERE director.id = movie.director_id AND movie.id=$id");
+        $res = $stmt->execute();
+        if ($res){
+            return $stmt->fetchObject(Director::class);
+        }else{
+            throw new \PDOException($stmt->errorInfo()[2]);
+        }
+    }
+
+    public function insert($director)
+    {
+        $prenom=$director->getPrenom();
+        $nom=$director->getNom();
+        $sql=$this->db->prepare("INSERT INTO director (first_name, last_name) VALUES (?,?)");
+        $sql->execute(array($prenom, $nom));
     }
 
     public function createObjectFromFields($fields)
     {
         $director = new Director ();
         $director->setId($fields['id'])->setNom($fields['last_name'])->setPrenom($fields['first_name']);
-
         return $director;
     }
 
-    public function setDirector($id){
-
-        $stmt = $this->db->prepare("SELECT * FROM director, movie WHERE director.id = movie.director_id AND movie.id=$id");
-        $res = $stmt->execute();
-        return $res;        
-        
-    }
     
 }
+
+?>

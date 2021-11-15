@@ -14,6 +14,8 @@ class Movie
     private $duration;
     private $date;
     private $coverImage;
+    private $idgenre;
+    private $iddirector;
     private $genre;
     private $director;
     private $actors;
@@ -22,7 +24,7 @@ class Movie
     {
         return $this->id;
     }
-    public function setId($id): Movie
+    public function setId(int $id=null): Movie
     {
         $this->id = $id;
         return $this;
@@ -61,25 +63,47 @@ class Movie
         return $this;
     }
 
-    public function getDate(): \DateTime
+    public function getDate()
     {
         return $this->date;
     }
 
-    public function setDate(DateTime $date): Movie
+    public function setDate($date): Movie
     {
         $this->date = $date;
         return $this;
     }
 
-    public function getCoverImage(): string
+    public function getCoverImage()
     {
         return $this->coverImage;
     }
 
-    public function setCoverImage(string $coverImage): Movie
+    public function setCoverImage($coverImage): Movie
     {
         $this->coverImage = $coverImage;
+        return $this;
+    }
+
+    public function getIdGenre()
+    {
+        return $this->idgenre;
+    }
+ 
+    public function setIdGenre($idgenre): Movie
+    {
+        $this->idgenre = $idgenre;
+        return $this;
+    }
+
+    public function getIdDirector()
+    {
+        return $this->iddirector;
+    }
+ 
+    public function setIdDirector($iddirector): Movie
+    {
+        $this->iddirector = $iddirector;
         return $this;
     }
 
@@ -94,17 +118,41 @@ class Movie
         return $this;
     }
 
-
     public function getDirector(): Director
     {
         return $this->director;
     }
-
     
     public function setDirector(Director $director): Movie
     {
         $this->director = $director;
         return $this;
+    }
+
+    public function getActors()
+    {
+        return $this->actors;
+    }
+    
+    public function setActors(Actor $actors): Movie
+    {
+        $this->actors = $actors;
+        return $this;
+    }
+
+    public function addActor(Actor $actor): void
+    {       
+        if (is_array($this->actors))
+        {
+            foreach ($this->actors as $a)
+            {
+                if($a->getId() == $actor->getId())
+                {
+                    return;
+                }
+            }
+        }
+        $this->actors[] = $actor;
     }
 
 }

@@ -1,13 +1,9 @@
 <?php
 
 namespace cinema\Models\Services;
-
 use cinema\Models\Daos\ActorDao;
-use cinema\Models\Entities\Actor;
-
 
 class ActorService
-
 {
     Private $actorDao;
 
@@ -22,11 +18,11 @@ class ActorService
         return $actors;
     }
 
-    // public function getById($id)
-    // {
-    //     $Actor = $this->ActorDao->findById($id);
-    //     return $Actor;
-    // }
+    public function getById($id)
+    {
+        $Actor = $this->ActorDao->findById($id);
+        return $Actor;
+    }
 }
 
 ?>

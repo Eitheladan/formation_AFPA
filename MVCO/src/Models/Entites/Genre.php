@@ -11,7 +11,7 @@ class Genre{
         return $this;
     }
 
-    public function setid($id){
+    public function setId(int $id=null){
         $this->id = $id;
         return $this;
     }

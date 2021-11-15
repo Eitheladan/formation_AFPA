@@ -28,4 +28,11 @@ class GenreService
         $genre = $this->genreDao->findById($id);
         return $genre;
     }
+
+    public function create($genreData)
+    {        
+        $genre= $this->genreDao->createObjectFromFields($genreData);
+        $this->genreDao->insert($genre);
+        
+    }
 }
